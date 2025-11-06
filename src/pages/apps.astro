@@ -6,8 +6,8 @@ import { orbs } from "../data/orbs";
 ---
 
 <Layout
-  title="Browse Apps - orbies.dev"
-  description="Discover small, focused apps built by developers in hours."
+  title="Explore Orbs - Small Apps Built in Hours"
+  description="Tiny, focused apps built rapidly with AI and shared freely. One problem. One solution. Open source."
 >
   <section class="apps-hero">
     <div class="hero-background">
@@ -25,22 +25,22 @@ import { orbs } from "../data/orbs";
       <div class="hero-header">
         <div class="hero-badge fade-in-up">
           <div class="badge-dot"></div>
-          <span>300+ shipped</span>
+          <span>Explore the collection</span>
         </div>
         <h1 class="hero-title">
           <span class="title-line fade-in-up" style="animation-delay: 0.1s"
-            >Built in</span
+            >Small tools.</span
           >
-          <span
-            class="title-line fade-in-up hero-accent"
-            style="animation-delay: 0.2s">hours</span
-          >
+          <span class="title-line fade-in-up" style="animation-delay: 0.2s">
+            <span class="hero-accent">Real</span> problems.
+          </span>
           <span class="title-line fade-in-up" style="animation-delay: 0.3s"
-            >not months</span
+            >Built in hours.</span
           >
         </h1>
         <p class="hero-subtitle fade-in-up" style="animation-delay: 0.4s">
-          One problem. Done well.
+          Small enough to build quickly. Useful enough to share. All open
+          source.
         </p>
       </div>
     </div>
@@ -48,61 +48,69 @@ import { orbs } from "../data/orbs";
 
   <section class="apps-content section-padding">
     <div class="container">
-      <div class="filters-section glass-card">
+      <div class="filters-section">
+        <div class="filters-header">
+          <div class="filters-info">
+            <h2 class="filters-heading">Explore</h2>
+            <p class="results-counter" id="resultsCounter">
+              <span id="visibleCount">0</span> of <span id="totalCount"
+                >{orbs.length}</span
+              > Orbs
+            </p>
+          </div>
+          <button class="reset-btn" id="resetFilters" style="display: none;">
+            <Icon name="refresh" size={14} />
+            <span>Clear filters</span>
+          </button>
+        </div>
+
         <div class="search-container">
           <div class="search-icon">
-            <Icon name="search" size={16} />
+            <Icon name="search" size={18} />
           </div>
           <input
             type="text"
-            placeholder="Find something..."
+            placeholder="Search Orbs by name, description, or tech..."
             class="search-input"
             id="searchInput"
           />
+          <button class="clear-search" id="clearSearch" style="display: none;">
+            <Icon name="x" size={16} />
+          </button>
         </div>
 
         <div class="filters-grid">
           <div class="filter-group">
-            <h3 class="filter-title">Platform</h3>
+            <h3 class="filter-title">
+              <Icon name="monitor" size={16} />
+              <span>Platform</span>
+            </h3>
             <div class="filter-pills">
-              <button class="filter-pill active liquid-btn" data-filter="all">
-                <span>All</span>
+              <button class="filter-pill active" data-filter="all">
+                All
               </button>
-              <button class="filter-pill glass-btn" data-filter="macos">
-                <span>macOS</span>
+              <button class="filter-pill" data-filter="macos"> macOS </button>
+              <button class="filter-pill" data-filter="windows">
+                Windows
               </button>
-              <button class="filter-pill glass-btn" data-filter="windows">
-                <span>Windows</span>
-              </button>
-              <button class="filter-pill glass-btn" data-filter="linux">
-                <span>Linux</span>
-              </button>
-              <button class="filter-pill glass-btn" data-filter="web">
-                <span>Web</span>
-              </button>
-              <button class="filter-pill glass-btn" data-filter="cli">
-                <span>CLI</span>
-              </button>
+              <button class="filter-pill" data-filter="linux"> Linux </button>
+              <button class="filter-pill" data-filter="web"> Web </button>
+              <button class="filter-pill" data-filter="cli"> CLI </button>
             </div>
           </div>
 
           <div class="filter-group">
-            <h3 class="filter-title">Technology</h3>
+            <h3 class="filter-title">
+              <Icon name="code" size={16} />
+              <span>Technology</span>
+            </h3>
             <div class="filter-pills">
-              <button class="filter-pill active liquid-btn" data-tech="all">
-                <span>All</span>
-              </button>
-              <button class="filter-pill glass-btn" data-tech="Swift">
-                <span>Swift</span>
-              </button>
-              <button class="filter-pill glass-btn" data-tech="Rust">
-                <span>Rust</span>
-              </button>
-              <button class="filter-pill glass-btn" data-tech="Go">
-                <span>Go</span>
-              </button>
-              <button class="filter-pill glass-btn" data-tech="TypeScript">
-                <span>TypeScript</span>
+              <button class="filter-pill active" data-tech="all"> All </button>
+              <button class="filter-pill" data-tech="Swift"> Swift </button>
+              <button class="filter-pill" data-tech="Rust"> Rust </button>
+              <button class="filter-pill" data-tech="Go"> Go </button>
+              <button class="filter-pill" data-tech="TypeScript">
+                TypeScript
               </button>
             </div>
           </div>
@@ -139,10 +147,10 @@ import { orbs } from "../data/orbs";
         <div class="empty-icon">
           <Icon name="search" size={48} />
         </div>
-        <h3>Nothing here</h3>
-        <p>Try different filters.</p>
+        <h3>No matches</h3>
+        <p>Try different filters or search terms.</p>
         <button class="liquid-btn" id="resetFilters">
-          <span>Reset</span>
+          <span>Clear all</span>
           <span class="btn-arrow">↻</span>
         </button>
       </div>
@@ -392,23 +400,78 @@ import { orbs } from "../data/orbs";
 
   /* Filters Section */
   .filters-section {
-    padding: var(--space-xl);
-    background: var(--glass-primary);
+    padding: var(--space-8);
+    background: var(--bg-glass);
     border: 1px solid var(--border-primary);
-    border-radius: var(--radius-xl);
-    backdrop-filter: var(--glass-blur);
-    margin-bottom: var(--space-3xl);
+    border-radius: var(--radius-2xl);
+    backdrop-filter: blur(var(--blur-lg));
+    -webkit-backdrop-filter: blur(var(--blur-lg));
+    margin-bottom: var(--space-12);
     display: flex;
     flex-direction: column;
-    gap: var(--space-xl);
-    transition: all var(--transition-normal);
+    gap: var(--space-8);
+    box-shadow: var(--shadow-sm);
   }
 
-  .filters-section:hover {
-    background: var(--glass-secondary);
-    border-color: var(--border-glass);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-lg);
+  /* Filters Header */
+  .filters-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: var(--space-4);
+  }
+
+  .filters-info {
+    flex: 1;
+  }
+
+  .filters-heading {
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0 0 var(--space-2) 0;
+    letter-spacing: -0.02em;
+  }
+
+  .results-counter {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    margin: 0;
+    font-weight: 500;
+  }
+
+  .results-counter span {
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .reset-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-4);
+    background: var(--bg-glass);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-lg);
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    backdrop-filter: blur(var(--blur-sm));
+    -webkit-backdrop-filter: blur(var(--blur-sm));
+  }
+
+  .reset-btn:hover {
+    background: var(--bg-glass-strong);
+    border-color: var(--border-strong);
+    color: var(--text-primary);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .reset-btn:active {
+    transform: translateY(0);
   }
 
   /* Search Container */
@@ -419,114 +482,138 @@ import { orbs } from "../data/orbs";
 
   .search-icon {
     position: absolute;
-    left: var(--space-lg);
+    left: var(--space-4);
     top: 50%;
     transform: translateY(-50%);
     color: var(--text-tertiary);
     z-index: 1;
+    pointer-events: none;
   }
 
   .search-input {
     width: 100%;
-    padding: var(--space-lg) var(--space-lg) var(--space-lg)
-      calc(var(--space-lg) * 3);
-    background: var(--glass-secondary);
+    padding: var(--space-4) var(--space-12) var(--space-4) var(--space-12);
+    background: var(--bg-secondary);
     border: 1px solid var(--border-primary);
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-xl);
     color: var(--text-primary);
-    font-size: var(--text-base);
+    font-size: var(--font-size-base);
     outline: none;
     transition: all var(--transition-normal);
     font-family: inherit;
     letter-spacing: -0.01em;
-    backdrop-filter: var(--glass-blur);
   }
 
   .search-input:focus {
-    border-color: var(--primary);
-    background: var(--glass-tertiary);
-    box-shadow:
-      0 0 0 3px var(--primary-glow),
-      var(--shadow-md);
+    border-color: var(--accent);
+    background: var(--bg-primary);
+    box-shadow: 0 0 0 3px var(--accent-soft);
   }
 
   .search-input::placeholder {
-    color: var(--text-quaternary);
+    color: var(--text-tertiary);
+  }
+
+  .clear-search {
+    position: absolute;
+    right: var(--space-4);
+    top: 50%;
+    transform: translateY(-50%);
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-glass);
+    border: 1px solid var(--border-primary);
+    border-radius: 50%;
+    color: var(--text-tertiary);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    z-index: 1;
+  }
+
+  .clear-search:hover {
+    background: var(--bg-glass-strong);
+    border-color: var(--border-strong);
+    color: var(--text-primary);
+    transform: translateY(-50%) scale(1.05);
   }
 
   /* Filters Grid */
   .filters-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: var(--space-2xl);
+    gap: var(--space-8);
   }
 
   .filter-group {
     display: flex;
     flex-direction: column;
-    gap: var(--space-lg);
+    gap: var(--space-4);
   }
 
   .filter-title {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
     font-weight: 600;
     color: var(--text-primary);
-    font-size: var(--text-lg);
+    font-size: var(--font-size-base);
     margin: 0;
     letter-spacing: -0.01em;
+  }
+
+  .filter-title :global(svg) {
+    color: var(--text-tertiary);
   }
 
   .filter-pills {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--space-sm);
+    gap: var(--space-2);
   }
 
   .filter-pill {
-    padding: var(--space-sm) var(--space-lg);
+    padding: var(--space-2) var(--space-4);
+    background: var(--bg-glass);
     border: 1px solid var(--border-primary);
     border-radius: var(--radius-full);
-    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
     font-weight: 500;
     cursor: pointer;
-    transition: all var(--transition-normal);
+    transition: all var(--transition-fast);
     white-space: nowrap;
-    position: relative;
-    overflow: hidden;
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-xs);
+    backdrop-filter: blur(var(--blur-sm));
+    -webkit-backdrop-filter: blur(var(--blur-sm));
+    font-family: inherit;
   }
 
-  .filter-pill.glass-btn {
-    background: var(--glass-primary);
-    color: var(--text-secondary);
-    backdrop-filter: var(--glass-blur);
-  }
-
-  .filter-pill.glass-btn:hover {
-    background: var(--glass-secondary);
-    border-color: var(--border-glass);
+  .filter-pill:hover {
+    background: var(--bg-glass-strong);
+    border-color: var(--border-strong);
     color: var(--text-primary);
     transform: translateY(-1px);
     box-shadow: var(--shadow-sm);
   }
 
-  .filter-pill.liquid-btn {
-    background: var(--black);
-    color: white;
-    border-color: var(--black);
-    box-shadow: var(--shadow-sm);
-  }
-
-  .filter-pill.liquid-btn:hover {
-    background: var(--black-soft);
-    box-shadow:
-      var(--shadow-md),
-      0 0 20px var(--red-glow);
+  .filter-pill:active {
+    transform: translateY(0);
   }
 
   .filter-pill.active {
-    transform: scale(1.05);
+    background: var(--accent);
+    border-color: var(--accent);
+    color: white;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .filter-pill.active:hover {
+    background: var(--accent-hover);
+    border-color: var(--accent-hover);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
   }
 
   /* Apps Grid */
@@ -553,42 +640,70 @@ import { orbs } from "../data/orbs";
   /* Empty State */
   .empty-state {
     text-align: center;
-    padding: var(--space-5xl) var(--space-2xl);
-    background: var(--glass-primary);
+    padding: var(--space-20) var(--space-8);
+    background: var(--bg-glass);
     border: 1px solid var(--border-primary);
-    border-radius: var(--radius-xl);
-    backdrop-filter: var(--glass-blur);
+    border-radius: var(--radius-2xl);
+    backdrop-filter: blur(var(--blur-lg));
+    -webkit-backdrop-filter: blur(var(--blur-lg));
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: var(--space-lg);
+    gap: var(--space-4);
     position: relative;
     z-index: var(--z-elevated);
+    box-shadow: var(--shadow-sm);
   }
 
   .empty-icon {
-    opacity: 0.3;
+    opacity: 0.2;
     color: var(--text-tertiary);
+    margin-bottom: var(--space-4);
   }
 
   .empty-state h3 {
     color: var(--text-primary);
-    font-size: var(--text-xl);
+    font-size: var(--font-size-xl);
     font-weight: 600;
     margin: 0;
+    letter-spacing: -0.02em;
   }
 
   .empty-state p {
     color: var(--text-secondary);
-    font-size: var(--text-base);
-    margin: 0;
+    font-size: var(--font-size-base);
+    margin: 0 0 var(--space-4) 0;
+  }
+
+  .empty-state .liquid-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-3) var(--space-6);
+    background: var(--accent);
+    border: 1px solid var(--accent);
+    border-radius: var(--radius-lg);
+    color: white;
+    font-size: var(--font-size-base);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    font-family: inherit;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .empty-state .liquid-btn:hover {
+    background: var(--accent-hover);
+    border-color: var(--accent-hover);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
   }
 
   .btn-arrow {
     transition: transform var(--transition-normal);
   }
 
-  .liquid-btn:hover .btn-arrow {
+  .empty-state .liquid-btn:hover .btn-arrow {
     transform: rotate(180deg);
   }
 
@@ -622,22 +737,36 @@ import { orbs } from "../data/orbs";
     }
 
     .filters-section {
-      padding: var(--space-xl);
-      gap: var(--space-xl);
+      padding: var(--space-6);
+      gap: var(--space-6);
+    }
+
+    .filters-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .filters-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-6);
     }
 
     .apps-grid {
       grid-template-columns: 1fr;
-      gap: var(--space-lg);
+      gap: var(--space-6);
     }
 
     .filter-pills {
-      gap: var(--space-xs);
+      gap: var(--space-2);
     }
 
     .filter-pill {
-      padding: var(--space-xs) var(--space-md);
-      font-size: var(--text-xs);
+      padding: var(--space-2) var(--space-3);
+      font-size: var(--font-size-xs);
+    }
+
+    .search-input {
+      font-size: var(--font-size-sm);
     }
 
     /* Reduce floating shapes on mobile */
@@ -661,8 +790,21 @@ import { orbs } from "../data/orbs";
     }
 
     .filters-section {
-      margin-bottom: var(--space-2xl);
-      padding: var(--space-lg);
+      margin-bottom: var(--space-8);
+      padding: var(--space-4);
+    }
+
+    .filters-heading {
+      font-size: var(--font-size-lg);
+    }
+
+    .results-counter {
+      font-size: var(--font-size-xs);
+    }
+
+    .reset-btn {
+      padding: var(--space-2) var(--space-3);
+      font-size: var(--font-size-xs);
     }
   }
 
@@ -709,17 +851,40 @@ import { orbs } from "../data/orbs";
     const searchInput = document.getElementById(
       "searchInput"
     ) as HTMLInputElement;
+    const clearSearchBtn = document.getElementById(
+      "clearSearch"
+    ) as HTMLElement;
     const appsGrid = document.getElementById("appsGrid") as HTMLElement;
     const emptyState = document.getElementById("emptyState") as HTMLElement;
     const appItems = Array.from(document.querySelectorAll(".app-item"));
     const filterPills = Array.from(document.querySelectorAll(".filter-pill"));
-    const resetButton = document.getElementById("resetFilters");
+    const resetButton = document.getElementById("resetFilters") as HTMLElement;
+    const visibleCountEl = document.getElementById(
+      "visibleCount"
+    ) as HTMLElement;
+    const totalCountEl = document.getElementById("totalCount") as HTMLElement;
 
     let activeFilters = {
       platform: "all",
       tech: "all",
       search: "",
     };
+
+    const totalCount = appItems.length;
+
+    // Update results counter
+    function updateCounter(count: number) {
+      if (visibleCountEl) visibleCountEl.textContent = count.toString();
+    }
+
+    // Check if filters are active
+    function hasActiveFilters(): boolean {
+      return (
+        activeFilters.platform !== "all" ||
+        activeFilters.tech !== "all" ||
+        activeFilters.search !== ""
+      );
+    }
 
     // Enhanced filter functionality
     function filterApps() {
@@ -742,12 +907,14 @@ import { orbs } from "../data/orbs";
 
         if (matchesPlatform && matchesTech && matchesSearch) {
           element.classList.remove("hidden");
-          element.style.animationDelay = `${visibleCount * 0.1}s`;
           visibleCount++;
         } else {
           element.classList.add("hidden");
         }
       });
+
+      // Update UI
+      updateCounter(visibleCount);
 
       if (visibleCount === 0) {
         emptyState.style.display = "flex";
@@ -756,18 +923,37 @@ import { orbs } from "../data/orbs";
         emptyState.style.display = "none";
         appsGrid.style.display = "grid";
       }
+
+      // Show/hide reset button
+      if (resetButton) {
+        resetButton.style.display = hasActiveFilters() ? "inline-flex" : "none";
+      }
     }
 
     // Search functionality with debouncing
     let searchTimeout: NodeJS.Timeout;
     searchInput?.addEventListener("input", (e) => {
+      const value = (e.target as HTMLInputElement).value;
+
+      // Show/hide clear button
+      if (clearSearchBtn) {
+        clearSearchBtn.style.display = value ? "flex" : "none";
+      }
+
       clearTimeout(searchTimeout);
       searchTimeout = setTimeout(() => {
-        activeFilters.search = (
-          e.target as HTMLInputElement
-        ).value.toLowerCase();
+        activeFilters.search = value.toLowerCase();
         filterApps();
       }, 300);
+    });
+
+    // Clear search
+    clearSearchBtn?.addEventListener("click", () => {
+      searchInput.value = "";
+      activeFilters.search = "";
+      clearSearchBtn.style.display = "none";
+      filterApps();
+      searchInput.focus();
     });
 
     // Filter pill interactions
@@ -785,12 +971,10 @@ import { orbs } from "../data/orbs";
         const siblings =
           pill.parentElement?.querySelectorAll(".filter-pill") || [];
         siblings.forEach((p) => {
-          p.classList.remove("active", "liquid-btn");
-          p.classList.add("glass-btn");
+          p.classList.remove("active");
         });
 
-        pill.classList.remove("glass-btn");
-        pill.classList.add("active", "liquid-btn");
+        pill.classList.add("active");
 
         // Update filter state
         if (filterType === "platform") {
@@ -806,36 +990,29 @@ import { orbs } from "../data/orbs";
     // Reset filters
     resetButton?.addEventListener("click", (e) => {
       e.preventDefault();
+
+      // Reset state
       activeFilters = { platform: "all", tech: "all", search: "" };
       searchInput.value = "";
 
+      // Hide clear and reset buttons
+      if (clearSearchBtn) clearSearchBtn.style.display = "none";
+      resetButton.style.display = "none";
+
+      // Reset pills
       filterPills.forEach((pill) => {
         const isAll = pill.textContent?.trim() === "All";
-        pill.classList.remove("active", "liquid-btn", "glass-btn");
+        pill.classList.remove("active");
         if (isAll) {
-          pill.classList.add("active", "liquid-btn");
-        } else {
-          pill.classList.add("glass-btn");
+          pill.classList.add("active");
         }
       });
 
       filterApps();
     });
 
-    // Enhanced hover effects for app items
-    appItems.forEach((item, index) => {
-      const element = item as HTMLElement;
-
-      element.addEventListener("mouseenter", () => {
-        element.style.transform = "translateY(-8px) scale(1.02)";
-        element.style.zIndex = "10";
-      });
-
-      element.addEventListener("mouseleave", () => {
-        element.style.transform = "translateY(0) scale(1)";
-        element.style.zIndex = "1";
-      });
-    });
+    // Initialize counter
+    updateCounter(totalCount);
 
     // Intersection Observer for scroll animations
     const observerOptions = {
@@ -854,29 +1031,6 @@ import { orbs } from "../data/orbs";
     // Observe app items for scroll animations
     appItems.forEach((item) => {
       observer.observe(item);
-    });
-
-    // Parallax effect for floating elements
-    let ticking = false;
-
-    function updateParallax() {
-      const scrolled = window.pageYOffset;
-      const elements = document.querySelectorAll(".element");
-
-      elements.forEach((element, index) => {
-        const speed = 0.1 + index * 0.05;
-        const yPos = -(scrolled * speed);
-        (element as HTMLElement).style.transform = `translateY(${yPos}px)`;
-      });
-
-      ticking = false;
-    }
-
-    window.addEventListener("scroll", () => {
-      if (!ticking) {
-        requestAnimationFrame(updateParallax);
-        ticking = true;
-      }
     });
   });
 </script>

@@ -4,8 +4,8 @@ import Icon from "../components/Icon.astro";
 ---
 
 <Layout
-  title="Publish Your App - orbies.dev"
-  description="Share your small, focused app with the developer community."
+  title="Share Your Orb"
+  description="Built something small and useful? Share it with the community. Free. Open source."
 >
   <!-- Animated Publish Hero -->
   <section class="publish-hero">
@@ -24,19 +24,19 @@ import Icon from "../components/Icon.astro";
       <div class="hero-header">
         <div class="hero-badge fade-in-up">
           <div class="badge-dot"></div>
-          <span>Share</span>
+          <span>Share your work</span>
         </div>
         <h1 class="hero-title">
           <span class="title-line fade-in-up" style="animation-delay: 0.1s"
-            >Add Your</span
+            >Built an</span
           >
           <span
             class="title-line fade-in-up hero-accent"
-            style="animation-delay: 0.2s">App</span
+            style="animation-delay: 0.2s">Orb?</span
           >
         </h1>
         <p class="hero-subtitle fade-in-up" style="animation-delay: 0.3s">
-          Built something? Show it.
+          Share it with the community. Help others solve the same problem.
         </p>
       </div>
     </div>
@@ -66,45 +66,49 @@ import Icon from "../components/Icon.astro";
 
         <form id="publishForm">
           <div class="form-step active" data-step="1">
-            <h2>Basic Information</h2>
+            <h2>Basic info</h2>
 
             <div class="form-group">
-              <label for="appName">App Name *</label>
+              <label for="appName">Orb name *</label>
               <input
                 type="text"
                 id="appName"
                 name="appName"
                 required
                 maxlength="50"
+                placeholder="e.g., Sentinel, GitStats, QuickNote"
               />
               <span class="char-count">0/50</span>
             </div>
 
             <div class="form-group">
-              <label for="tagline">What does it do? *</label>
+              <label for="tagline">One-line description *</label>
               <input
                 type="text"
                 id="tagline"
                 name="tagline"
                 required
                 maxlength="100"
+                placeholder="What problem does it solve?"
               />
               <span class="char-count">0/100</span>
             </div>
 
             <div class="form-group">
-              <label for="description">Why use it? *</label>
+              <label for="description">Longer description *</label>
               <textarea
                 id="description"
                 name="description"
                 required
                 maxlength="500"
-                rows="4"></textarea>
+                rows="4"
+                placeholder="Explain what it does and why someone would use it"
+              ></textarea>
               <span class="char-count">0/500</span>
             </div>
 
             <div class="form-group">
-              <label for="category">Category Tags</label>
+              <label for="category">Category tags</label>
               <input
                 type="text"
                 id="category"
@@ -115,16 +119,16 @@ import Icon from "../components/Icon.astro";
             </div>
 
             <button type="button" class="btn btn-primary" onclick="nextStep()">
-              <span>Next</span>
+              <span>Continue</span>
               <span class="btn-icon">→</span>
             </button>
           </div>
 
           <div class="form-step" data-step="2">
-            <h2>Technical Details</h2>
+            <h2>Technical details</h2>
 
             <div class="form-group">
-              <label for="github">GitHub URL *</label>
+              <label for="github">GitHub repository *</label>
               <input
                 type="url"
                 id="github"
@@ -132,10 +136,11 @@ import Icon from "../components/Icon.astro";
                 required
                 placeholder="https://github.com/username/repo"
               />
+              <small>Must be open source and publicly accessible</small>
             </div>
 
             <div class="form-group">
-              <label>Tech Stack *</label>
+              <label>Built with *</label>
               <div class="checkbox-group">
                 <label
                   ><input type="checkbox" name="tech" value="Swift" /> Swift</label
@@ -159,7 +164,7 @@ import Icon from "../components/Icon.astro";
             </div>
 
             <div class="form-group">
-              <label>Platform(s) *</label>
+              <label>Runs on *</label>
               <div class="checkbox-group">
                 <label
                   ><input type="checkbox" name="platform" value="macos" /> macOS</label
@@ -180,9 +185,9 @@ import Icon from "../components/Icon.astro";
             </div>
 
             <div class="form-group">
-              <label for="buildTime">Build Time Estimate *</label>
+              <label for="buildTime">Build time *</label>
               <select id="buildTime" name="buildTime" required>
-                <option value="">Select...</option>
+                <option value="">How long did it take?</option>
                 <option value="under-1-hour">&lt; 1 hour</option>
                 <option value="1-3 hours">1-3 hours</option>
                 <option value="3-6 hours">3-6 hours</option>
@@ -206,7 +211,7 @@ import Icon from "../components/Icon.astro";
                 class="btn btn-primary"
                 onclick="nextStep()"
               >
-                <span>Next</span>
+                <span>Continue</span>
                 <span class="btn-icon">→</span>
               </button>
             </div>
@@ -269,34 +274,34 @@ import Icon from "../components/Icon.astro";
           </div>
 
           <div class="form-step" data-step="4">
-            <h2>Check</h2>
-            <p class="philosophy-intro">Your app:</p>
+            <h2>Final check</h2>
+            <p class="philosophy-intro">Confirm your Orb is:</p>
 
             <div class="form-group">
               <label class="checkbox-label">
                 <input type="checkbox" name="philosophy" required />
-                ✓ Solves one problem
+                Solves one specific problem
               </label>
             </div>
 
             <div class="form-group">
               <label class="checkbox-label">
                 <input type="checkbox" name="philosophy" required />
-                ✓ Works (you tested it)
+                Actually works (you tested it)
               </label>
             </div>
 
             <div class="form-group">
               <label class="checkbox-label">
                 <input type="checkbox" name="philosophy" required />
-                ✓ Free
+                Free and open source
               </label>
             </div>
 
             <div class="form-group">
               <label class="checkbox-label">
                 <input type="checkbox" name="philosophy" required />
-                ✓ No bloat
+                Simple and focused (no bloat)
               </label>
             </div>
 
@@ -305,8 +310,8 @@ import Icon from "../components/Icon.astro";
               id="successMessage"
               style="display: none;"
             >
-              <h3>Done</h3>
-              <p>We'll review it and list it soon.</p>
+              <h3>Submitted!</h3>
+              <p>Thanks for sharing. We'll review and add it soon.</p>
             </div>
 
             <div class="form-actions">
@@ -319,7 +324,7 @@ import Icon from "../components/Icon.astro";
                 <span>Back</span>
               </button>
               <button type="submit" class="btn btn-primary" id="submitBtn">
-                <span>List My App</span>
+                <span>Share Orb</span>
                 <div class="btn-icon">
                   <Icon name="check" size={16} />
                 </div>
