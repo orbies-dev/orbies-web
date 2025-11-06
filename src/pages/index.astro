@@ -14,8 +14,8 @@ const featuredOrbs = orbs.filter((orb) => orb.featured).slice(0, 6);
   <section class="philosophy section-padding">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title fade-in-up">The philosophy</h2>
-        <p class="section-subtitle fade-in-up">Experiments in rapid shipping</p>
+        <h2 class="section-title fade-in-up">How we build</h2>
+        <p class="section-subtitle fade-in-up">Three principles.</p>
       </div>
 
       <div class="philosophy-grid">
@@ -28,12 +28,14 @@ const featuredOrbs = orbs.filter((orb) => orb.featured).slice(0, 6);
               fill="none"
               stroke="currentColor"
               stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
             >
               <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
             </svg>
           </div>
-          <h3>Speed over perfection</h3>
-          <p>Ship it today. Iterate if needed. Hours not weeks.</p>
+          <h3>Speed</h3>
+          <p>Ship today. Iterate tomorrow.</p>
         </div>
 
         <div class="philosophy-card glass fade-in-up">
@@ -45,6 +47,8 @@ const featuredOrbs = orbs.filter((orb) => orb.featured).slice(0, 6);
               fill="none"
               stroke="currentColor"
               stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
             >
               <circle cx="12" cy="12" r="10"></circle>
               <circle cx="12" cy="12" r="4"></circle>
@@ -53,8 +57,8 @@ const featuredOrbs = orbs.filter((orb) => orb.featured).slice(0, 6);
               ></path>
             </svg>
           </div>
-          <h3>Focus over features</h3>
-          <p>One job, done well. If it needs a roadmap, it's not an Orb.</p>
+          <h3>Focus</h3>
+          <p>One problem. One solution.</p>
         </div>
 
         <div class="philosophy-card glass fade-in-up">
@@ -66,6 +70,8 @@ const featuredOrbs = orbs.filter((orb) => orb.featured).slice(0, 6);
               fill="none"
               stroke="currentColor"
               stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
             >
               <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
               <circle cx="9" cy="7" r="4"></circle>
@@ -73,8 +79,8 @@ const featuredOrbs = orbs.filter((orb) => orb.featured).slice(0, 6);
               ></path>
             </svg>
           </div>
-          <h3>Sharing over hoarding</h3>
-          <p>If it helped you, share it. Free on GitHub. Always.</p>
+          <h3>Openness</h3>
+          <p>Free. Open source. Always.</p>
         </div>
       </div>
     </div>
@@ -83,9 +89,9 @@ const featuredOrbs = orbs.filter((orb) => orb.featured).slice(0, 6);
   <section class="featured-apps section-padding">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title fade-in-up">What people are building</h2>
+        <h2 class="section-title fade-in-up">Featured Orbs</h2>
         <p class="section-subtitle fade-in-up">
-          Small tools. Real problems. Shared freely.
+          Real tools. Real impact.
         </p>
       </div>
 
@@ -109,7 +115,7 @@ const featuredOrbs = orbs.filter((orb) => orb.featured).slice(0, 6);
 
       <div class="view-all fade-in-up">
         <a href="/apps" class="btn btn-secondary btn-lg">
-          <span>Explore all Orbs</span>
+          <span>View all Orbs</span>
           <svg
             width="16"
             height="16"
@@ -117,6 +123,8 @@ const featuredOrbs = orbs.filter((orb) => orb.featured).slice(0, 6);
             fill="none"
             stroke="currentColor"
             stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
           >
             <path d="M5 12h14M12 5l7 7-7 7"></path>
           </svg>
@@ -180,24 +188,23 @@ const featuredOrbs = orbs.filter((orb) => orb.featured).slice(0, 6);
   <section class="cta-section section-padding">
     <div class="container">
       <div class="cta-content glass-strong fade-in-up">
-        <h2 class="cta-title">Build your own Orb</h2>
+        <h2 class="cta-title">Start building</h2>
         <p class="cta-text">
-          The barrier is low. Got an idea? Spend an evening with AI. See what
-          happens.
+          Turn your idea into reality in hours.
         </p>
 
         <div class="cta-steps">
           <div class="step">
             <div class="step-number">1</div>
-            <span>Identify pain point</span>
+            <span>Find a problem</span>
           </div>
           <div class="step">
             <div class="step-number">2</div>
-            <span>Build with AI</span>
+            <span>Build solution</span>
           </div>
           <div class="step">
             <div class="step-number">3</div>
-            <span>Ship on GitHub</span>
+            <span>Share it</span>
           </div>
         </div>
 
@@ -205,7 +212,7 @@ const featuredOrbs = orbs.filter((orb) => orb.featured).slice(0, 6);
           style="display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap;"
         >
           <a href="/manifesto" class="btn btn-primary btn-lg">
-            <span>Read the manifesto</span>
+            <span>Read manifesto</span>
             <svg
               width="16"
               height="16"
@@ -213,12 +220,14 @@ const featuredOrbs = orbs.filter((orb) => orb.featured).slice(0, 6);
               fill="none"
               stroke="currentColor"
               stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
             >
               <path d="M5 12h14M12 5l7 7-7 7"></path>
             </svg>
           </a>
           <a href="/publish" class="btn btn-secondary btn-lg">
-            <span>Share your Orb</span>
+            <span>Submit Orb</span>
           </a>
         </div>
       </div>
@@ -349,9 +358,38 @@ const featuredOrbs = orbs.filter((orb) => orb.featured).slice(0, 6);
     box-shadow: var(--shadow-lg);
   }
 
+  .philosophy-icon svg {
+    color: white;
+    stroke: white;
+  }
+
   .philosophy-card:hover .philosophy-icon {
     transform: translateY(-2px) scale(1.05);
     box-shadow: var(--shadow-glow);
+  }
+
+  /* Computer Mode - Philosophy Icons */
+  :global([data-theme="computer"]) .philosophy-icon {
+    background: transparent !important;
+    color: var(--text-primary);
+    border: 2px solid var(--border-primary);
+    border-radius: 0;
+    box-shadow: none !important;
+  }
+
+  :global([data-theme="computer"]) .philosophy-icon svg {
+    color: var(--text-primary) !important;
+    stroke: var(--text-primary) !important;
+  }
+
+  :global([data-theme="computer"]) .philosophy-icon svg circle,
+  :global([data-theme="computer"]) .philosophy-icon svg path {
+    fill: none !important;
+    stroke: var(--text-primary) !important;
+  }
+
+  :global([data-theme="computer"]) .philosophy-card:hover .philosophy-icon {
+    box-shadow: none !important;
   }
 
   .philosophy-card h3 {
@@ -610,6 +648,14 @@ const featuredOrbs = orbs.filter((orb) => orb.featured).slice(0, 6);
     z-index: 1;
   }
 
+  /* Computer Mode - Step Numbers */
+  :global([data-theme="computer"]) .step-number {
+    background: transparent !important;
+    color: var(--text-primary);
+    border: 2px solid var(--border-primary);
+    border-radius: 0;
+  }
+
   .step span {
     color: var(--text-primary);
     font-weight: var(--font-weight-semibold);
@@ -671,5 +717,57 @@ const featuredOrbs = orbs.filter((orb) => orb.featured).slice(0, 6);
     .philosophy-card::before {
       animation: none !important;
     }
+  }
+
+  /* ============================================
+     COMPUTER MODE OVERRIDES
+     ============================================ */
+
+  :global([data-theme="computer"]) .philosophy-card,
+  :global([data-theme="computer"]) .testimonial,
+  :global([data-theme="computer"]) .step {
+    background: transparent !important;
+    border: 2px solid var(--border-primary);
+    border-radius: 0;
+    backdrop-filter: none;
+  }
+
+  :global([data-theme="computer"]) .philosophy-card::before,
+  :global([data-theme="computer"]) .testimonial::before,
+  :global([data-theme="computer"]) .step::before {
+    display: none;
+  }
+
+  :global([data-theme="computer"]) .philosophy-card:hover,
+  :global([data-theme="computer"]) .testimonial:hover,
+  :global([data-theme="computer"]) .step:hover {
+    background: transparent !important;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  }
+
+  :global([data-theme="computer"]) .cta-content {
+    background: transparent !important;
+    border: 2px solid var(--border-primary);
+    border-radius: 0;
+    backdrop-filter: none;
+  }
+
+  :global([data-theme="computer"]) .philosophy {
+    background: var(--bg-primary);
+  }
+
+  :global([data-theme="computer"]) .philosophy::before {
+    display: none;
+  }
+
+  :global([data-theme="computer"]) .author-avatar {
+    background: transparent !important;
+    color: var(--text-primary);
+    border: 2px solid var(--border-primary);
+    border-radius: 0;
+  }
+
+  :global([data-theme="computer"]) .testimonial:hover .author-avatar {
+    box-shadow: none !important;
   }
 </style>

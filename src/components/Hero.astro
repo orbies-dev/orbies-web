@@ -17,29 +17,25 @@
     <div class="hero-content">
       <div class="hero-badge fade-in-up">
         <div class="badge-dot"></div>
-        <span>An experiment in rapid shipping</span>
+        <span>Built in hours</span>
       </div>
 
       <h1 class="hero-title">
         <span class="title-line fade-in-up" style="animation-delay: 0.1s"
-          >Build small.</span
+          >Small apps.</span
         >
         <span class="title-line fade-in-up" style="animation-delay: 0.2s">
-          Share <span class="hero-accent">freely</span>.
-        </span>
-        <span class="title-line fade-in-up" style="animation-delay: 0.3s">
-          Move fast.
+          Big <span class="hero-accent">impact</span>.
         </span>
       </h1>
 
       <p class="hero-description fade-in-up" style="animation-delay: 0.4s">
-        Orbs are tiny apps built in hours with AI. One problem. One solution.
-        Open source.
+        Build tools in hours, not months. Solve one problem well. Share freely.
       </p>
 
       <div class="hero-actions fade-in-up" style="animation-delay: 0.5s">
-        <a href="/manifesto" class="btn btn-primary">
-          <span>Read the manifesto</span>
+        <a href="/apps" class="btn btn-primary">
+          <span>Browse Orbs</span>
           <svg
             width="14"
             height="14"
@@ -47,12 +43,14 @@
             fill="none"
             stroke="currentColor"
             stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
           >
             <path d="M5 12h14M12 5l7 7-7 7"></path>
           </svg>
         </a>
-        <a href="/apps" class="btn btn-secondary">
-          <span>See Orbs</span>
+        <a href="/manifesto" class="btn btn-secondary">
+          <span>Learn more</span>
         </a>
       </div>
 
@@ -63,7 +61,7 @@
         </div>
         <div class="stat">
           <div class="stat-number counter" data-target="2.1">0</div>
-          <div class="stat-label">Avg hours</div>
+          <div class="stat-label">Hours</div>
         </div>
         <div class="stat">
           <div class="stat-number counter" data-target="100">0</div>
@@ -390,6 +388,11 @@
     box-shadow: var(--shadow-sm);
   }
 
+  .btn-primary svg {
+    color: var(--text-inverse);
+    stroke: var(--text-inverse);
+  }
+
   .btn-primary:hover {
     background: var(--accent-hover);
     transform: translateY(-1px);
@@ -402,6 +405,11 @@
     border-color: var(--border-primary);
     backdrop-filter: blur(var(--blur-md));
     -webkit-backdrop-filter: blur(var(--blur-md));
+  }
+
+  .btn-secondary svg {
+    color: var(--text-primary);
+    stroke: var(--text-primary);
   }
 
   .btn-secondary:hover {
@@ -551,5 +559,220 @@
     .gradient-mesh {
       opacity: 0.8;
     }
+  }
+
+  /* ============================================
+     COMPUTER MODE - TERMINAL AESTHETIC
+     ============================================ */
+
+  :global([data-theme="computer"]) .hero {
+    background: var(--bg-primary);
+  }
+
+  /* Hide decorative elements in computer mode */
+  :global([data-theme="computer"]) .floating-shapes,
+  :global([data-theme="computer"]) .gradient-mesh {
+    display: none;
+  }
+
+  /* ASCII Grid Background */
+  :global([data-theme="computer"]) .warp-grid {
+    background-image:
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 19px,
+        rgba(255, 255, 255, 0.08) 19px,
+        rgba(255, 255, 255, 0.08) 20px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 9px,
+        rgba(255, 255, 255, 0.08) 9px,
+        rgba(255, 255, 255, 0.08) 10px
+      );
+    opacity: 1;
+    animation: terminalScan 3s linear infinite;
+  }
+
+  @keyframes terminalScan {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(20px);
+    }
+  }
+
+  /* Terminal-style badge */
+  :global([data-theme="computer"]) .hero-badge {
+    border-radius: 0;
+    border: 2px solid var(--border-primary);
+    background: transparent;
+    backdrop-filter: none;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+  }
+
+  :global([data-theme="computer"]) .hero-badge::before {
+    content: "[ ";
+    color: var(--text-secondary);
+  }
+
+  :global([data-theme="computer"]) .hero-badge::after {
+    content: " ]";
+    color: var(--text-secondary);
+  }
+
+  :global([data-theme="computer"]) .badge-dot {
+    border-radius: 0;
+    width: 8px;
+    height: 8px;
+    background: none;
+    border: 2px solid var(--text-primary);
+    animation: terminalBlink 1s step-end infinite;
+  }
+
+  @keyframes terminalBlink {
+    0%, 50% {
+      border-color: var(--text-primary);
+      background: var(--text-primary);
+    }
+    51%, 100% {
+      border-color: var(--text-secondary);
+      background: transparent;
+    }
+  }
+
+  /* Title with ASCII decorations */
+  :global([data-theme="computer"]) .hero-title {
+    font-weight: 700;
+    letter-spacing: 0.05em;
+  }
+
+  :global([data-theme="computer"]) .title-line::before {
+    content: "> ";
+    color: var(--text-secondary);
+    font-size: 0.8em;
+  }
+
+  :global([data-theme="computer"]) .hero-accent {
+    text-decoration: underline;
+    text-decoration-style: double;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+  }
+
+  :global([data-theme="computer"]) .hero-accent::after {
+    display: none;
+  }
+
+  /* Terminal-style stats box */
+  :global([data-theme="computer"]) .hero-stats {
+    border-radius: 0;
+    border: 2px solid var(--border-primary);
+    background: transparent;
+    backdrop-filter: none;
+    position: relative;
+    padding: var(--space-6);
+  }
+
+  :global([data-theme="computer"]) .hero-stats::before {
+    content: "╔═══════════════════════════════════════════╗";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    font-size: 12px;
+    line-height: 1;
+    color: var(--border-primary);
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  :global([data-theme="computer"]) .hero-stats::after {
+    content: "╚═══════════════════════════════════════════╝";
+    position: absolute;
+    bottom: -2px;
+    left: -2px;
+    right: -2px;
+    font-size: 12px;
+    line-height: 1;
+    color: var(--border-primary);
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  :global([data-theme="computer"]) .stat-number {
+    font-family: "Inconsolata", monospace;
+    color: var(--text-primary);
+  }
+
+  :global([data-theme="computer"]) .stat-number::before {
+    content: "[";
+    color: var(--text-secondary);
+    margin-right: 4px;
+  }
+
+  :global([data-theme="computer"]) .stat-number::after {
+    content: "]";
+    color: var(--text-secondary);
+    margin-left: 4px;
+  }
+
+  :global([data-theme="computer"]) .stat-label {
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+  }
+
+  /* Terminal typing effect for description */
+  :global([data-theme="computer"]) .hero-description::after {
+    content: "_";
+    animation: blink 0.7s step-end infinite;
+    margin-left: 2px;
+  }
+
+  /* Computer Mode - Button Overrides */
+  :global([data-theme="computer"]) .btn {
+    border-radius: 0;
+    border: 2px solid var(--border-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    backdrop-filter: none;
+  }
+
+  :global([data-theme="computer"]) .btn-primary {
+    background: var(--text-primary);
+    color: var(--bg-primary);
+    border-color: var(--text-primary);
+  }
+
+  :global([data-theme="computer"]) .btn-primary svg {
+    color: var(--bg-primary) !important;
+    stroke: var(--bg-primary) !important;
+  }
+
+  :global([data-theme="computer"]) .btn-primary:hover {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+    transform: scale(1.02);
+  }
+
+  :global([data-theme="computer"]) .btn-secondary {
+    background: transparent;
+    border-color: var(--border-primary);
+    color: var(--text-primary);
+  }
+
+  :global([data-theme="computer"]) .btn-secondary svg {
+    color: var(--text-primary) !important;
+    stroke: var(--text-primary) !important;
+  }
+
+  :global([data-theme="computer"]) .btn-secondary:hover {
+    background: var(--bg-secondary);
+    border-color: var(--border-strong);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
   }
 </style>

@@ -460,4 +460,85 @@ const { name, description, icon, tech, buildTime, github, stars } = Astro.props;
       border-width: 2px;
     }
   }
+
+  /* ============================================
+     COMPUTER MODE OVERRIDES
+     ============================================ */
+
+  :global([data-theme="computer"]) .app-card {
+    background: transparent !important;
+    border: 2px solid var(--border-primary);
+    border-radius: 0;
+    backdrop-filter: none;
+  }
+
+  :global([data-theme="computer"]) .app-card::before {
+    display: none;
+  }
+
+  :global([data-theme="computer"]) .app-card-bg {
+    display: none;
+  }
+
+  :global([data-theme="computer"]) .app-card:hover {
+    background: transparent !important;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+  }
+
+  :global([data-theme="computer"]) .orb-outer,
+  :global([data-theme="computer"]) .orb-middle,
+  :global([data-theme="computer"]) .orb-inner {
+    border-color: var(--border-primary);
+    background: transparent !important;
+  }
+
+  :global([data-theme="computer"]) .app-card:hover .orb-outer {
+    border-color: var(--border-strong);
+  }
+
+  :global([data-theme="computer"]) .app-card:hover .orb-middle {
+    border-color: var(--border-strong);
+  }
+
+  :global([data-theme="computer"]) .app-card:hover .orb-inner {
+    border-color: var(--text-primary);
+    background: transparent !important;
+  }
+
+  :global([data-theme="computer"]) .tech-badge {
+    background: transparent !important;
+    border: 1px solid var(--border-primary);
+    border-radius: 0;
+    color: var(--text-primary);
+    backdrop-filter: none;
+  }
+
+  :global([data-theme="computer"]) .tech-badge:hover {
+    background: transparent !important;
+    border-color: var(--border-strong);
+    box-shadow: none;
+  }
+
+  :global([data-theme="computer"]) .app-link {
+    background: transparent !important;
+    border: 2px solid var(--border-primary);
+    border-radius: 0;
+    color: var(--text-primary);
+    backdrop-filter: none;
+  }
+
+  :global([data-theme="computer"]) .app-link:hover {
+    background: transparent !important;
+    border-color: var(--border-strong);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  }
+
+  :global([data-theme="computer"]) .stat :global(svg) {
+    opacity: 1;
+  }
+
+  :global([data-theme="computer"]) .app-link :global(svg) {
+    opacity: 1;
+  }
 </style>

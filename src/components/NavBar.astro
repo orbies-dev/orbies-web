@@ -30,20 +30,10 @@
     </ul>
 
     <div class="nav-cta">
-      <button class="theme-toggle" aria-label="Toggle theme">
-        <svg
-          width="16"
-          height="16"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-        >
-          <circle cx="12" cy="12" r="5"></circle>
-          <path
-            d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"
-          ></path>
-        </svg>
+      <button class="theme-toggle" aria-label="Toggle between Human and Computer mode">
+        <span class="theme-label human-mode">HUMAN</span>
+        <span class="theme-label computer-mode">COMPUTER</span>
+        <div class="toggle-slider"></div>
       </button>
       <a href="/publish" class="btn btn-primary">
         <span>Submit</span>
@@ -54,6 +44,8 @@
           fill="none"
           stroke="currentColor"
           stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
         >
           <path d="M5 12h14M12 5l7 7-7 7"></path>
         </svg>
@@ -63,20 +55,32 @@
 </nav>
 
 <script>
-  // Theme toggle functionality
+  // Theme toggle functionality - Human vs Computer mode
   const themeToggle = document.querySelector(".theme-toggle");
   const html = document.documentElement;
 
-  // Get current theme from localStorage or default to 'light'
-  const currentTheme = localStorage.getItem("theme") || "light";
+  // Get current theme from localStorage or default to 'human'
+  const currentTheme = localStorage.getItem("theme") || "human";
   html.setAttribute("data-theme", currentTheme);
+
+  // Update toggle button state
+  function updateToggleState(theme: string) {
+    if (theme === "computer") {
+      themeToggle?.classList.add("computer-active");
+    } else {
+      themeToggle?.classList.remove("computer-active");
+    }
+  }
+
+  updateToggleState(currentTheme);
 
   themeToggle?.addEventListener("click", () => {
     const currentTheme = html.getAttribute("data-theme");
-    const newTheme = currentTheme === "light" ? "dark" : "light";
+    const newTheme = currentTheme === "computer" ? "human" : "computer";
 
     html.setAttribute("data-theme", newTheme);
     localStorage.setItem("theme", newTheme);
+    updateToggleState(newTheme);
   });
 
   // Active link highlighting
@@ -132,6 +136,10 @@
     transition: all var(--transition-normal);
   }
 
+  .nav-logo svg circle {
+    fill: currentColor;
+  }
+
   .nav-logo:hover {
     opacity: 0.8;
     transform: translateY(-1px);
@@ -139,6 +147,32 @@
 
   .nav-logo:hover svg {
     transform: scale(1.1);
+  }
+
+  /* Computer Mode - Logo SVG Fix */
+  :global([data-theme="computer"]) .nav-logo svg {
+    color: var(--text-primary);
+  }
+
+  :global([data-theme="computer"]) .nav-logo svg circle {
+    fill: var(--text-primary);
+  }
+
+  /* Make all circles in computer mode fully visible with increasing opacity */
+  :global([data-theme="computer"]) .nav-logo svg circle:nth-child(1) {
+    opacity: 0.3 !important;
+  }
+
+  :global([data-theme="computer"]) .nav-logo svg circle:nth-child(2) {
+    opacity: 0.5 !important;
+  }
+
+  :global([data-theme="computer"]) .nav-logo svg circle:nth-child(3) {
+    opacity: 0.7 !important;
+  }
+
+  :global([data-theme="computer"]) .nav-logo svg circle:nth-child(4) {
+    opacity: 1 !important;
   }
 
   .nav-links {
@@ -185,32 +219,91 @@
   }
 
   .theme-toggle {
-    background: var(--bg-glass);
+    background: var(--bg-elevated);
     border: 1px solid var(--border-primary);
     border-radius: var(--radius-lg);
-    padding: var(--space-2);
+    padding: var(--space-1);
     cursor: pointer;
-    transition: all var(--transition-fast);
-    backdrop-filter: blur(var(--blur-sm));
-    -webkit-backdrop-filter: blur(var(--blur-sm));
+    transition: all 0.3s ease;
     color: var(--text-secondary);
     display: flex;
     align-items: center;
-    justify-content: center;
+    gap: var(--space-2);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .theme-label {
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+    padding: var(--space-1) var(--space-3);
+    position: relative;
+    z-index: 2;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .theme-toggle .human-mode {
+    color: var(--text-primary);
+  }
+
+  .theme-toggle .computer-mode {
+    color: var(--text-tertiary);
+  }
+
+  .theme-toggle.computer-active .human-mode {
+    color: var(--text-tertiary);
+  }
+
+  .theme-toggle.computer-active .computer-mode {
+    color: var(--text-primary);
+  }
+
+  .toggle-slider {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: calc(50% - 4px);
+    height: calc(100% - 8px);
+    background: var(--accent-soft);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-md);
+    transition: transform 0.3s ease, background 0.3s ease;
+    z-index: 1;
+  }
+
+  .theme-toggle.computer-active .toggle-slider {
+    transform: translateX(100%);
+    background: var(--accent-glow);
   }
 
   .theme-toggle:hover {
-    background: var(--bg-glass-strong);
     border-color: var(--border-strong);
-    transform: translateY(-1px);
-    color: var(--text-primary);
     box-shadow: var(--shadow-sm);
   }
 
   .theme-toggle:focus-visible {
     outline: 2px solid var(--accent);
     outline-offset: 2px;
-    box-shadow: 0 0 0 4px var(--accent-glow);
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* Computer Mode - Toggle Style */
+  [data-theme="computer"] .theme-toggle {
+    border-radius: 0;
+    border: 2px solid var(--border-primary);
+    background: var(--bg-elevated);
+  }
+
+  [data-theme="computer"] .toggle-slider {
+    border-radius: 0;
+    background: var(--text-primary);
+    border-color: var(--text-primary);
+  }
+
+  [data-theme="computer"] .theme-toggle:hover {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
   }
 
   /* Mobile responsiveness */
