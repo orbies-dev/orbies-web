@@ -1,0 +1,664 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import AppCard from "../components/AppCard.astro";
+import Icon from "../components/Icon.astro";
+import { orbs } from "../data/orbs";
+
+const featuredOrbs = orbs.filter((orb) => orb.featured).slice(0, 6);
+---
+
+<Layout title="orbies.dev - Ship Tools in Hours, Not Months">
+  <Hero />
+
+  <section class="philosophy section-padding">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title fade-in-up">Why it works</h2>
+        <p class="section-subtitle fade-in-up">Small. Real. Finished.</p>
+      </div>
+
+      <div class="philosophy-grid">
+        <div class="philosophy-card glass fade-in-up">
+          <div class="philosophy-icon">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+            </svg>
+          </div>
+          <h3>Done beats perfect</h3>
+          <p>Weekend project you finish beats year-long project you don't.</p>
+        </div>
+
+        <div class="philosophy-card glass fade-in-up">
+          <div class="philosophy-icon">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <circle cx="12" cy="12" r="10"></circle>
+              <circle cx="12" cy="12" r="4"></circle>
+              <path
+                d="M4.93 4.93l4.24 4.24M14.83 14.83l4.24 4.24M4.93 19.07l4.24-4.24M14.83 9.17l4.24-4.24"
+              ></path>
+            </svg>
+          </div>
+          <h3>One problem only</h3>
+          <p>One thing well. Not five things poorly.</p>
+        </div>
+
+        <div class="philosophy-card glass fade-in-up">
+          <div class="philosophy-icon">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"
+              ></path>
+            </svg>
+          </div>
+          <h3>Share everything</h3>
+          <p>GitHub. Help others. Everyone wins.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="featured-apps section-padding">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title fade-in-up">Built this weekend</h2>
+        <p class="section-subtitle fade-in-up">
+          Real problems. Hours not months.
+        </p>
+      </div>
+
+      <div class="apps-grid">
+        {
+          featuredOrbs.map((orb, index) => (
+            <div class="fade-in-up" style={`animation-delay: ${index * 100}ms`}>
+              <AppCard
+                name={orb.name}
+                description={orb.description}
+                icon={orb.icon}
+                tech={orb.tech}
+                buildTime={orb.buildTime}
+                github={orb.github}
+                stars={orb.stars}
+              />
+            </div>
+          ))
+        }
+      </div>
+
+      <div class="view-all fade-in-up">
+        <a href="/apps" class="btn btn-secondary btn-lg">
+          <span>See all 300+</span>
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M5 12h14M12 5l7 7-7 7"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- <section class="testimonials section-padding">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title fade-in-up">What people ship</h2>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial glass fade-in-up">
+          <div class="testimonial-content">
+            <p>
+              "CLI tool for git stats. 3 hours. 50 stars. First thing I
+              finished."
+            </p>
+          </div>
+          <div class="testimonial-author">
+            <div class="author-avatar">AC</div>
+            <div class="author-info">
+              <div class="author-name">Alex Chen</div>
+              <div class="author-role">Full Stack Dev</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial glass fade-in-up">
+          <div class="testimonial-content">
+            <p>"Stopped planning. Started shipping. 4 tools this month."</p>
+          </div>
+          <div class="testimonial-author">
+            <div class="author-avatar">SK</div>
+            <div class="author-info">
+              <div class="author-name">Sarah Kim</div>
+              <div class="author-role">Frontend Engineer</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial glass fade-in-up">
+          <div class="testimonial-content">
+            <p>"Color picker. 1K users in a week. Just ship it."</p>
+          </div>
+          <div class="testimonial-author">
+            <div class="author-avatar">JM</div>
+            <div class="author-info">
+              <div class="author-name">Jordan Martinez</div>
+              <div class="author-role">Indie Hacker</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <section class="cta-section section-padding">
+    <div class="container">
+      <div class="cta-content glass-strong fade-in-up">
+        <h2 class="cta-title">Build this weekend</h2>
+        <p class="cta-text">Solve one problem. Ship it.</p>
+
+        <div class="cta-steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <span>Build</span>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <span>Ship</span>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <span>Share</span>
+          </div>
+        </div>
+
+        <a href="/publish" class="btn btn-primary btn-lg">
+          <span>Add your tool</span>
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M5 12h14M12 5l7 7-7 7"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* Section styling */
+  .section-padding {
+    padding: var(--space-24) 0;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: var(--space-20);
+  }
+
+  .section-title {
+    font-size: clamp(var(--font-size-3xl), 5vw, var(--font-size-5xl));
+    font-weight: var(--font-weight-black);
+    margin-bottom: var(--space-4);
+    color: var(--text-primary);
+    letter-spacing: -0.035em;
+  }
+
+  .section-subtitle {
+    font-size: var(--font-size-xl);
+    color: var(--text-secondary);
+    font-weight: var(--font-weight-medium);
+    max-width: 600px;
+    margin: 0 auto;
+    letter-spacing: -0.011em;
+  }
+
+  /* Philosophy section */
+  .philosophy {
+    background: var(--bg-secondary);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .philosophy::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+        circle at 20% 80%,
+        var(--accent-soft) 0%,
+        transparent 50%
+      ),
+      radial-gradient(circle at 80% 20%, var(--accent-soft) 0%, transparent 50%);
+    pointer-events: none;
+    animation: bgShift 15s ease-in-out infinite;
+  }
+
+  @keyframes bgShift {
+    0%,
+    100% {
+      transform: scale(1) rotate(0deg);
+      opacity: 0.5;
+    }
+    50% {
+      transform: scale(1.1) rotate(2deg);
+      opacity: 0.7;
+    }
+  }
+
+  .philosophy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-8);
+    position: relative;
+    z-index: var(--z-elevated);
+  }
+
+  .philosophy-card {
+    padding: var(--space-8);
+    border-radius: var(--radius-2xl);
+    text-align: center;
+    transition: all var(--transition-normal);
+    background: var(--bg-glass);
+    border: 1px solid var(--border-primary);
+    backdrop-filter: blur(var(--blur-md));
+    -webkit-backdrop-filter: blur(var(--blur-md));
+    position: relative;
+    overflow: hidden;
+  }
+
+  .philosophy-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--accent-soft);
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+  }
+
+  .philosophy-card:hover::before {
+    opacity: 1;
+  }
+
+  .philosophy-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--border-strong);
+    box-shadow: var(--shadow-xl);
+  }
+
+  .philosophy-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto var(--space-6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-xl);
+    background: var(--accent);
+    color: white;
+    transition: all var(--transition-normal);
+    position: relative;
+    z-index: 1;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .philosophy-card:hover .philosophy-icon {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: var(--shadow-glow);
+  }
+
+  .philosophy-card h3 {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--space-4);
+    color: var(--text-primary);
+    font-weight: var(--font-weight-bold);
+    position: relative;
+    z-index: 1;
+  }
+
+  .philosophy-card p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+    margin: 0;
+  }
+
+  /* Featured apps section */
+  .featured-apps {
+    background: var(--bg-primary);
+    position: relative;
+  }
+
+  .apps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--space-8);
+    margin-bottom: var(--space-12);
+  }
+
+  .view-all {
+    text-align: center;
+  }
+
+  /* Testimonials section */
+  .testimonials {
+    background: var(--bg-tertiary);
+    position: relative;
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-8);
+  }
+
+  .testimonial {
+    padding: var(--space-8);
+    border-radius: var(--radius-xl);
+    background: var(--bg-glass);
+    border: 1px solid var(--border-primary);
+    backdrop-filter: blur(var(--blur-md));
+    -webkit-backdrop-filter: blur(var(--blur-md));
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .testimonial::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--accent-soft);
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+  }
+
+  .testimonial:hover::before {
+    opacity: 1;
+  }
+
+  .testimonial:hover {
+    transform: translateY(-4px);
+    border-color: var(--border-strong);
+    box-shadow: var(--shadow-xl);
+  }
+
+  .testimonial-content {
+    margin-bottom: var(--space-6);
+    position: relative;
+    z-index: 1;
+  }
+
+  .testimonial-content p {
+    font-size: var(--font-size-lg);
+    line-height: 1.5;
+    color: var(--text-secondary);
+    font-style: italic;
+    margin: 0;
+    font-weight: var(--font-weight-medium);
+  }
+
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    position: relative;
+    z-index: 1;
+  }
+
+  .author-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-bold);
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-fast);
+  }
+
+  .testimonial:hover .author-avatar {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .author-name {
+    font-weight: var(--font-weight-semibold);
+    color: var(--text-primary);
+    font-size: var(--font-size-base);
+    margin-bottom: var(--space-1);
+  }
+
+  .author-role {
+    color: var(--text-tertiary);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+  }
+
+  /* CTA section */
+  .cta-section {
+    background: var(--bg-primary);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+      ellipse 60% 40% at 50% 0%,
+      var(--accent-soft) 0%,
+      transparent 70%
+    );
+    pointer-events: none;
+  }
+
+  .cta-content {
+    padding: var(--space-20);
+    border-radius: var(--radius-3xl);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-6);
+    background: var(--bg-glass-strong);
+    border: 1px solid var(--border-primary);
+    backdrop-filter: blur(var(--blur-lg));
+    -webkit-backdrop-filter: blur(var(--blur-lg));
+    box-shadow: var(--shadow-2xl);
+    position: relative;
+    z-index: var(--z-elevated);
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .cta-title {
+    font-size: clamp(var(--font-size-3xl), 5vw, var(--font-size-5xl));
+    margin: 0;
+    font-weight: var(--font-weight-black);
+    color: var(--text-primary);
+    letter-spacing: -0.035em;
+  }
+
+  .cta-text {
+    font-size: var(--font-size-xl);
+    color: var(--text-secondary);
+    margin: 0;
+    font-weight: var(--font-weight-medium);
+    max-width: 600px;
+    letter-spacing: -0.011em;
+  }
+
+  .cta-steps {
+    display: flex;
+    gap: var(--space-6);
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: var(--space-8) 0;
+  }
+
+  .step {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-4) var(--space-6);
+    background: var(--bg-glass);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--border-primary);
+    backdrop-filter: blur(var(--blur-sm));
+    -webkit-backdrop-filter: blur(var(--blur-sm));
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .step::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--accent-soft);
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+  }
+
+  .step:hover::before {
+    opacity: 1;
+  }
+
+  .step:hover {
+    transform: translateY(-2px);
+    border-color: var(--border-strong);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .step-number {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-bold);
+    position: relative;
+    z-index: 1;
+  }
+
+  .step span {
+    color: var(--text-primary);
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--font-size-base);
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .section-padding {
+      padding: var(--space-16) 0;
+    }
+
+    .section-header {
+      margin-bottom: var(--space-12);
+    }
+
+    .apps-grid,
+    .testimonials-grid,
+    .philosophy-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-6);
+    }
+
+    .cta-content {
+      padding: var(--space-12);
+      margin: 0 var(--space-4);
+    }
+
+    .cta-steps {
+      flex-direction: column;
+      gap: var(--space-4);
+    }
+
+    .step {
+      width: 100%;
+      max-width: 280px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .philosophy-card,
+    .testimonial {
+      padding: var(--space-6);
+    }
+
+    .cta-content {
+      margin: 0;
+      border-radius: var(--radius-xl);
+    }
+  }
+
+  /* Accessibility */
+  @media (prefers-reduced-motion: reduce) {
+    .philosophy::before,
+    .step::before,
+    .testimonial::before,
+    .philosophy-card::before {
+      animation: none !important;
+    }
+  }
+</style>

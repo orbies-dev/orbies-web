@@ -1,0 +1,88 @@
+---
+import "../styles/global.css";
+import NavBar from "../components/NavBar.astro";
+import Footer from "../components/Footer.astro";
+
+interface Props {
+  title: string;
+  description?: string;
+  keywords?: string;
+  ogImage?: string;
+}
+
+const {
+  title,
+  description = "Ship focused developer tools in hours, not months. Discover 300+ small apps built by developers who believe in shipping fast and solving real problems.",
+  keywords = "developer tools, small apps, side projects, ship fast, open source, focused software, minimal apps, weekend projects",
+  ogImage = "/og-image.png",
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const siteName = "orbies.dev";
+---
+
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#6b5b4f" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(ogImage, Astro.site)} />
+    <meta property="og:site_name" content={siteName} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={new URL(ogImage, Astro.site)} />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "orbies.dev",
+        "description": "Ship focused developer tools in hours, not months",
+        "url": "https://orbies.dev",
+        "creator": {
+          "@type": "Organization",
+          "name": "orbies.dev"
+        },
+        "keywords": "developer tools, small apps, side projects, ship fast, open source"
+      }
+    </script>
+
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2240%22 fill=%22%236b5b4f%22/></svg>"
+    />
+    <title>{title}</title>
+    <script is:inline>
+      // Theme initialization - prevent flash
+      (function () {
+        const savedTheme = localStorage.getItem("theme") || "light";
+        document.documentElement.setAttribute("data-theme", savedTheme);
+      })();
+    </script>
+  </head>
+  <body>
+    <NavBar />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

@@ -1,0 +1,307 @@
+---
+import Icon from "./Icon.astro";
+---
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <div class="brand-logo">
+          <div class="logo-dot"></div>
+          <span class="logo-text">orbies</span>
+        </div>
+        <p class="brand-tagline">Apps that work. No bloat.</p>
+      </div>
+
+      <div class="footer-section">
+        <h4 class="section-title">Navigate</h4>
+        <ul class="footer-links">
+          <li><a href="/apps" class="footer-link">Apps</a></li>
+          <li><a href="/publish" class="footer-link">Add App</a></li>
+          <li><a href="/manifesto" class="footer-link">Manifesto</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4 class="section-title">Community</h4>
+        <ul class="footer-links">
+          <li>
+            <a
+              href="https://github.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="footer-link">GitHub</a>
+          </li>
+          <li>
+            <a
+              href="https://twitter.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="footer-link">Twitter</a>
+          </li>
+          <li>
+            <a
+              href="https://discord.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="footer-link">Discord</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4 class="section-title">Resources</h4>
+        <ul class="footer-links">
+          <li><a href="#" class="footer-link">Documentation</a></li>
+          <li><a href="#" class="footer-link">API Reference</a></li>
+          <li><a href="#" class="footer-link">Guidelines</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-bottom-content">
+        <p class="copyright">&copy; 2025 orbies.dev</p>
+        <div class="footer-stats">
+          <span class="stat">300+ Apps</span>
+          <span class="stat-divider">·</span>
+          <span class="stat">25K+ Users</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  /* ============================================
+     MODERN COMPACT FOOTER
+     Matches site theme - clean and minimal
+     ============================================ */
+
+  .footer {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-primary);
+    margin-top: var(--space-24);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+      circle at 50% 0%,
+      var(--accent-soft) 0%,
+      transparent 50%
+    );
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  .footer-container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+    position: relative;
+    z-index: 1;
+  }
+
+  .footer-content {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: var(--space-12);
+    padding: var(--space-20) 0 var(--space-12);
+  }
+
+  /* Brand Section */
+  .footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 650;
+    font-size: 1.0625rem;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+    margin-bottom: var(--space-2);
+  }
+
+  .logo-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--blue), var(--blue-bright));
+    transition: transform var(--transition-normal);
+    box-shadow: 0 0 8px var(--blue-glow);
+  }
+
+  .logo-text {
+    color: var(--text-primary);
+  }
+
+  .brand-tagline {
+    color: var(--text-secondary);
+    margin: 0;
+    font-size: var(--text-sm);
+    line-height: 1.6;
+    max-width: 280px;
+    font-weight: var(--font-medium);
+    letter-spacing: -0.01em;
+  }
+
+  /* Section Titles */
+  .section-title {
+    color: var(--text-primary);
+    margin-bottom: var(--space-4);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  /* Footer Links */
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .footer-link {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: var(--text-sm);
+    transition: color var(--transition-fast);
+    line-height: 1.5;
+    font-weight: var(--font-medium);
+    letter-spacing: -0.01em;
+  }
+
+  .footer-link:hover {
+    color: var(--text-primary);
+  }
+
+  /* Footer Bottom */
+  .footer-bottom {
+    border-top: 1px solid var(--border-primary);
+    padding: var(--space-6) 0;
+  }
+
+  .footer-bottom-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .copyright {
+    margin: 0;
+    color: var(--text-tertiary);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    letter-spacing: -0.01em;
+  }
+
+  .footer-stats {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    font-size: var(--text-sm);
+    color: var(--text-tertiary);
+    font-weight: var(--font-medium);
+  }
+
+  .stat {
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.01em;
+  }
+
+  .stat-divider {
+    opacity: 0.5;
+  }
+
+  /* ============================================
+     RESPONSIVE DESIGN
+     ============================================ */
+
+  @media (max-width: 1024px) {
+    .footer-content {
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-10);
+    }
+
+    .footer-brand {
+      grid-column: 1 / -1;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .footer {
+      margin-top: var(--space-16);
+    }
+
+    .footer-content {
+      grid-template-columns: 1fr;
+      gap: var(--space-8);
+      padding: var(--space-12) 0 var(--space-8);
+    }
+
+    .footer-bottom-content {
+      flex-direction: column;
+      gap: var(--space-3);
+      text-align: center;
+    }
+
+    .footer-stats {
+      justify-content: center;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .footer-content {
+      padding: var(--space-10) 0 var(--space-6);
+    }
+  }
+
+  /* ============================================
+     ACCESSIBILITY
+     ============================================ */
+
+  .footer-link:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .logo-dot,
+    .footer-link,
+    .footer::before {
+      transition: none !important;
+      animation: none !important;
+    }
+  }
+
+  /* High Contrast Mode */
+  @media (prefers-contrast: high) {
+    .footer {
+      border-top-width: 2px;
+    }
+
+    .footer-bottom {
+      border-top-width: 2px;
+    }
+
+    .footer::before {
+      display: none;
+    }
+  }
+</style>
