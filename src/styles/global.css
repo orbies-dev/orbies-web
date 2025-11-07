@@ -1,62 +1,66 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&display=swap");
 
 /* ============================================
-   DUAL-MODE MANIFESTO DESIGN SYSTEM
-   Human Mode: Clean White Manifesto
-   Computer Mode: Pure ASCII Terminal
+   DUAL-MODE DESIGN SYSTEM
+   Human Mode: Clean Green Theme
+   Computer Mode: Matrix Green Terminal
    ============================================ */
 
 :root {
-  /* HUMAN MODE - Clean White Manifesto */
+  /* HUMAN MODE - Clean Simplistic White Theme */
   --color-pure-white: #ffffff;
   --color-pure-black: #000000;
-  --color-off-white: #fafafa;
-  --color-light-gray: #f5f5f5;
-  --color-border-gray: #e5e5e5;
-  --color-text-gray: #1a1a1a;
-  --color-mid-gray: #666666;
-  --color-subtle-gray: #999999;
+  --color-gray-50: #fafafa;
+  --color-gray-100: #f5f5f5;
+  --color-gray-200: #e5e5e5;
+  --color-gray-300: #d4d4d4;
+  --color-gray-400: #a3a3a3;
+  --color-gray-500: #737373;
+  --color-gray-600: #525252;
+  --color-gray-700: #404040;
+  --color-gray-800: #262626;
+  --color-gray-900: #171717;
 
-  /* Dynamic Backgrounds - Human Mode */
+  /* Dynamic Backgrounds - Human (Light) Mode */
   --bg-primary: var(--color-pure-white);
-  --bg-secondary: var(--color-off-white);
-  --bg-tertiary: var(--color-light-gray);
+  --bg-secondary: var(--color-gray-50);
+  --bg-tertiary: var(--color-gray-100);
   --bg-elevated: var(--color-pure-white);
   --bg-glass: rgba(255, 255, 255, 0.95);
   --bg-glass-strong: rgba(255, 255, 255, 0.98);
-  --bg-blur: rgba(255, 255, 255, 0.96);
+  --bg-blur: rgba(255, 255, 255, 0.92);
 
-  /* Text Colors - Human Mode */
-  --text-primary: var(--color-pure-black);
-  --text-secondary: var(--color-text-gray);
-  --text-tertiary: var(--color-mid-gray);
-  --text-quaternary: var(--color-subtle-gray);
-  --text-muted: var(--color-subtle-gray);
+  /* Text Colors - Human (Light) Mode */
+  --text-primary: var(--color-gray-900);
+  --text-secondary: var(--color-gray-700);
+  --text-tertiary: var(--color-gray-600);
+  --text-quaternary: var(--color-gray-500);
+  --text-muted: var(--color-gray-400);
   --text-inverse: var(--color-pure-white);
 
   /* Accent System - Minimal Black */
   --accent: var(--color-pure-black);
-  --accent-hover: var(--color-text-gray);
-  --accent-light: var(--color-mid-gray);
-  --accent-glow: rgba(0, 0, 0, 0.05);
-  --accent-soft: rgba(0, 0, 0, 0.03);
-  --accent-gas: rgba(0, 0, 0, 0.01);
+  --accent-hover: var(--color-gray-800);
+  --accent-light: var(--color-gray-700);
+  --accent-glow: rgba(0, 0, 0, 0.08);
+  --accent-soft: rgba(0, 0, 0, 0.04);
+  --accent-gas: rgba(0, 0, 0, 0.02);
 
-  /* Borders - Ultra Minimal */
-  --border-primary: var(--color-border-gray);
-  --border-secondary: rgba(0, 0, 0, 0.03);
-  --border-strong: rgba(0, 0, 0, 0.15);
+  /* Borders - Minimal Gray */
+  --border-primary: var(--color-gray-200);
+  --border-secondary: var(--color-gray-100);
+  --border-strong: var(--color-gray-300);
   --border-glass: rgba(255, 255, 255, 0.8);
 
-  /* Shadows - Almost None */
-  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.02);
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04);
-  --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.05);
-  --shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.06);
-  --shadow-xl: 0 8px 24px rgba(0, 0, 0, 0.08);
-  --shadow-2xl: 0 16px 40px rgba(0, 0, 0, 0.1);
-  --shadow-glow: 0 0 0 1px rgba(0, 0, 0, 0.05);
+  /* Shadows - Minimal Gray */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --shadow-2xl: 0 16px 40px rgba(0, 0, 0, 0.15);
+  --shadow-glow: 0 0 0 1px rgba(0, 0, 0, 0.08);
   --shadow-border: 0 0 0 1px var(--border-primary);
 
   /* Apple Spacing System */
@@ -138,33 +142,40 @@
 }
 
 [data-theme="computer"] {
-  /* COMPUTER MODE - Pure ASCII Terminal */
-  --bg-primary: var(--color-pure-black);
-  --bg-secondary: #0a0a0a;
-  --bg-tertiary: #1a1a1a;
-  --bg-elevated: var(--color-pure-black);
-  --bg-glass: rgba(0, 0, 0, 0.95);
-  --bg-glass-strong: rgba(0, 0, 0, 0.98);
-  --bg-blur: rgba(0, 0, 0, 0.96);
+  /* COMPUTER MODE - Cyberpunk Terminal */
+  --color-cyber-cyan: #00f0ff;
+  --color-cyber-blue: #0088ff;
+  --color-cyber-purple: #b000ff;
+  --color-cyber-pink: #ff00aa;
+  --color-cyber-dark: #0a0e1a;
+  --color-cyber-darker: #050810;
 
-  --text-primary: var(--color-pure-white);
-  --text-secondary: #e0e0e0;
-  --text-tertiary: #b0b0b0;
-  --text-quaternary: #808080;
-  --text-muted: #666666;
-  --text-inverse: var(--color-pure-black);
+  --bg-primary: var(--color-cyber-darker);
+  --bg-secondary: #0d1220;
+  --bg-tertiary: #151b2e;
+  --bg-elevated: var(--color-cyber-dark);
+  --bg-glass: rgba(10, 14, 26, 0.92);
+  --bg-glass-strong: rgba(10, 14, 26, 0.96);
+  --bg-blur: rgba(10, 14, 26, 0.94);
 
-  --accent: var(--color-pure-white);
-  --accent-hover: #e0e0e0;
-  --accent-light: #b0b0b0;
-  --accent-glow: rgba(255, 255, 255, 0.1);
-  --accent-soft: rgba(255, 255, 255, 0.05);
-  --accent-gas: rgba(255, 255, 255, 0.02);
+  --text-primary: var(--color-cyber-cyan);
+  --text-secondary: #66d9ff;
+  --text-tertiary: #4488cc;
+  --text-quaternary: #3366aa;
+  --text-muted: #2255aa;
+  --text-inverse: var(--color-cyber-darker);
 
-  --border-primary: rgba(255, 255, 255, 0.2);
-  --border-secondary: rgba(255, 255, 255, 0.1);
-  --border-strong: rgba(255, 255, 255, 0.3);
-  --border-glass: rgba(0, 0, 0, 0.8);
+  --accent: var(--color-cyber-cyan);
+  --accent-hover: var(--color-cyber-blue);
+  --accent-light: #33f5ff;
+  --accent-glow: rgba(0, 240, 255, 0.25);
+  --accent-soft: rgba(0, 240, 255, 0.12);
+  --accent-gas: rgba(0, 240, 255, 0.06);
+
+  --border-primary: rgba(0, 240, 255, 0.25);
+  --border-secondary: rgba(0, 240, 255, 0.12);
+  --border-strong: rgba(0, 240, 255, 0.45);
+  --border-glass: rgba(10, 14, 26, 0.85);
 
   --shadow-xs: none;
   --shadow-sm: none;
@@ -172,7 +183,8 @@
   --shadow-lg: none;
   --shadow-xl: none;
   --shadow-2xl: none;
-  --shadow-glow: 0 0 10px rgba(255, 255, 255, 0.3);
+  --shadow-glow: 0 0 20px rgba(0, 240, 255, 0.4),
+    0 0 40px rgba(0, 136, 255, 0.2);
   --shadow-border: 0 0 0 1px var(--border-primary);
 }
 
@@ -214,11 +226,11 @@ body {
 /* Computer Mode Typography */
 [data-theme="computer"] body,
 [data-theme="computer"] * {
-  font-family: "Inconsolata", "Courier New", monospace !important;
-  letter-spacing: 0;
-  font-feature-settings: normal;
-  -webkit-font-smoothing: auto;
-  -moz-osx-font-smoothing: auto;
+  font-family: "JetBrains Mono", "SF Mono", "Monaco", "Cascadia Code", monospace !important;
+  letter-spacing: -0.01em;
+  font-feature-settings: "liga" 0, "calt" 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Computer Mode - Remove all decorative backgrounds */
@@ -233,10 +245,10 @@ body {
    ICON SYSTEM - Both Human and Computer Modes
    ============================================ */
 
-/* Base icon styles - ensure proper color inheritance */
+/* Base icon styles - use black color as primary in human mode */
 svg,
 svg.icon {
-  color: inherit;
+  color: var(--color-pure-black);
   transition: all var(--transition-fast);
 }
 
@@ -247,7 +259,7 @@ svg rect,
 svg polygon,
 svg polyline,
 svg line {
-  stroke: inherit;
+  stroke: currentColor;
 }
 
 /* For icons with fill, inherit currentColor */
@@ -256,6 +268,279 @@ svg[fill]:not([fill="none"]) circle,
 svg[fill]:not([fill="none"]) rect,
 svg[fill]:not([fill="none"]) polygon {
   fill: currentColor;
+}
+
+/* Manifesto page icons - use black color in human mode, matrix green in computer mode */
+.manifesto-content svg,
+.manifesto-hero svg {
+  color: var(--color-pure-black);
+  stroke: var(--color-pure-black);
+}
+
+.manifesto-content svg path,
+.manifesto-content svg circle,
+.manifesto-content svg rect,
+.manifesto-content svg polygon,
+.manifesto-content svg polyline,
+.manifesto-content svg line,
+.manifesto-hero svg path,
+.manifesto-hero svg circle,
+.manifesto-hero svg rect,
+.manifesto-hero svg polygon,
+.manifesto-hero svg polyline,
+.manifesto-hero svg line {
+  stroke: var(--color-pure-black);
+}
+
+.manifesto-content svg[fill]:not([fill="none"]) path,
+.manifesto-content svg[fill]:not([fill="none"]) circle,
+.manifesto-content svg[fill]:not([fill="none"]) rect,
+.manifesto-content svg[fill]:not([fill="none"]) polygon,
+.manifesto-hero svg[fill]:not([fill="none"]) path,
+.manifesto-hero svg[fill]:not([fill="none"]) circle,
+.manifesto-hero svg[fill]:not([fill="none"]) rect,
+.manifesto-hero svg[fill]:not([fill="none"]) polygon {
+  fill: var(--color-pure-black);
+}
+
+/* For filled elements with explicit fill="currentColor" */
+.manifesto-content svg circle[fill="currentColor"],
+.manifesto-content svg path[fill="currentColor"],
+.manifesto-content svg rect[fill="currentColor"],
+.manifesto-content svg polygon[fill="currentColor"],
+.manifesto-hero svg circle[fill="currentColor"],
+.manifesto-hero svg path[fill="currentColor"],
+.manifesto-hero svg rect[fill="currentColor"],
+.manifesto-hero svg polygon[fill="currentColor"] {
+  fill: var(--color-pure-black);
+}
+
+/* Computer Mode - Override manifesto icons to use matrix green */
+[data-theme="computer"] .manifesto-content svg,
+[data-theme="computer"] .manifesto-hero svg {
+  color: var(--color-matrix-green) !important;
+  stroke: var(--color-matrix-green) !important;
+}
+
+[data-theme="computer"] .manifesto-content svg path,
+[data-theme="computer"] .manifesto-content svg circle,
+[data-theme="computer"] .manifesto-content svg rect,
+[data-theme="computer"] .manifesto-content svg polygon,
+[data-theme="computer"] .manifesto-content svg polyline,
+[data-theme="computer"] .manifesto-content svg line,
+[data-theme="computer"] .manifesto-hero svg path,
+[data-theme="computer"] .manifesto-hero svg circle,
+[data-theme="computer"] .manifesto-hero svg rect,
+[data-theme="computer"] .manifesto-hero svg polygon,
+[data-theme="computer"] .manifesto-hero svg polyline,
+[data-theme="computer"] .manifesto-hero svg line {
+  stroke: var(--color-matrix-green) !important;
+}
+
+[data-theme="computer"] .manifesto-content svg[fill]:not([fill="none"]) path,
+[data-theme="computer"] .manifesto-content svg[fill]:not([fill="none"]) circle,
+[data-theme="computer"] .manifesto-content svg[fill]:not([fill="none"]) rect,
+[data-theme="computer"] .manifesto-content svg[fill]:not([fill="none"]) polygon,
+[data-theme="computer"] .manifesto-hero svg[fill]:not([fill="none"]) path,
+[data-theme="computer"] .manifesto-hero svg[fill]:not([fill="none"]) circle,
+[data-theme="computer"] .manifesto-hero svg[fill]:not([fill="none"]) rect,
+[data-theme="computer"] .manifesto-hero svg[fill]:not([fill="none"]) polygon {
+  fill: var(--color-matrix-green) !important;
+}
+
+[data-theme="computer"] .manifesto-content svg circle[fill="currentColor"],
+[data-theme="computer"] .manifesto-content svg path[fill="currentColor"],
+[data-theme="computer"] .manifesto-content svg rect[fill="currentColor"],
+[data-theme="computer"] .manifesto-content svg polygon[fill="currentColor"],
+[data-theme="computer"] .manifesto-hero svg circle[fill="currentColor"],
+[data-theme="computer"] .manifesto-hero svg path[fill="currentColor"],
+[data-theme="computer"] .manifesto-hero svg rect[fill="currentColor"],
+[data-theme="computer"] .manifesto-hero svg polygon[fill="currentColor"] {
+  fill: var(--color-matrix-green) !important;
+}
+
+/* Icons inside green background containers - use black in human mode, white in computer mode */
+.feature-icon svg,
+.section-icon svg,
+.section-icon-center svg,
+.philosophy-icon svg,
+.cta-icon svg {
+  color: var(--color-pure-black) !important;
+  stroke: var(--color-pure-black) !important;
+}
+
+.feature-icon svg path,
+.feature-icon svg circle,
+.feature-icon svg rect,
+.feature-icon svg polygon,
+.feature-icon svg polyline,
+.feature-icon svg line,
+.section-icon svg path,
+.section-icon svg circle,
+.section-icon svg rect,
+.section-icon svg polygon,
+.section-icon svg polyline,
+.section-icon svg line,
+.section-icon-center svg path,
+.section-icon-center svg circle,
+.section-icon-center svg rect,
+.section-icon-center svg polygon,
+.section-icon-center svg polyline,
+.section-icon-center svg line,
+.philosophy-icon svg path,
+.philosophy-icon svg circle,
+.philosophy-icon svg rect,
+.philosophy-icon svg polygon,
+.philosophy-icon svg polyline,
+.philosophy-icon svg line,
+.cta-icon svg path,
+.cta-icon svg circle,
+.cta-icon svg rect,
+.cta-icon svg polygon,
+.cta-icon svg polyline,
+.cta-icon svg line {
+  stroke: var(--color-pure-black) !important;
+}
+
+.feature-icon svg[fill]:not([fill="none"]) path,
+.feature-icon svg[fill]:not([fill="none"]) circle,
+.feature-icon svg[fill]:not([fill="none"]) rect,
+.feature-icon svg[fill]:not([fill="none"]) polygon,
+.section-icon svg[fill]:not([fill="none"]) path,
+.section-icon svg[fill]:not([fill="none"]) circle,
+.section-icon svg[fill]:not([fill="none"]) rect,
+.section-icon svg[fill]:not([fill="none"]) polygon,
+.section-icon-center svg[fill]:not([fill="none"]) path,
+.section-icon-center svg[fill]:not([fill="none"]) circle,
+.section-icon-center svg[fill]:not([fill="none"]) rect,
+.section-icon-center svg[fill]:not([fill="none"]) polygon,
+.philosophy-icon svg[fill]:not([fill="none"]) path,
+.philosophy-icon svg[fill]:not([fill="none"]) circle,
+.philosophy-icon svg[fill]:not([fill="none"]) rect,
+.philosophy-icon svg[fill]:not([fill="none"]) polygon,
+.cta-icon svg[fill]:not([fill="none"]) path,
+.cta-icon svg[fill]:not([fill="none"]) circle,
+.cta-icon svg[fill]:not([fill="none"]) rect,
+.cta-icon svg[fill]:not([fill="none"]) polygon {
+  fill: var(--color-pure-black) !important;
+}
+
+.feature-icon svg circle[fill="currentColor"],
+.feature-icon svg path[fill="currentColor"],
+.feature-icon svg rect[fill="currentColor"],
+.feature-icon svg polygon[fill="currentColor"],
+.section-icon svg circle[fill="currentColor"],
+.section-icon svg path[fill="currentColor"],
+.section-icon svg rect[fill="currentColor"],
+.section-icon svg polygon[fill="currentColor"],
+.section-icon-center svg circle[fill="currentColor"],
+.section-icon-center svg path[fill="currentColor"],
+.section-icon-center svg rect[fill="currentColor"],
+.section-icon-center svg polygon[fill="currentColor"],
+.philosophy-icon svg circle[fill="currentColor"],
+.philosophy-icon svg path[fill="currentColor"],
+.philosophy-icon svg rect[fill="currentColor"],
+.philosophy-icon svg polygon[fill="currentColor"],
+.cta-icon svg circle[fill="currentColor"],
+.cta-icon svg path[fill="currentColor"],
+.cta-icon svg rect[fill="currentColor"],
+.cta-icon svg polygon[fill="currentColor"] {
+  fill: var(--color-pure-black) !important;
+}
+
+/* Computer Mode - Override icons in green backgrounds to use white */
+[data-theme="computer"] .feature-icon svg,
+[data-theme="computer"] .section-icon svg,
+[data-theme="computer"] .section-icon-center svg,
+[data-theme="computer"] .philosophy-icon svg,
+[data-theme="computer"] .cta-icon svg {
+  color: var(--bg-primary) !important;
+  stroke: var(--color-pure-white) !important;
+}
+
+[data-theme="computer"] .feature-icon svg path,
+[data-theme="computer"] .feature-icon svg circle,
+[data-theme="computer"] .feature-icon svg rect,
+[data-theme="computer"] .feature-icon svg polygon,
+[data-theme="computer"] .feature-icon svg polyline,
+[data-theme="computer"] .feature-icon svg line,
+[data-theme="computer"] .section-icon svg path,
+[data-theme="computer"] .section-icon svg circle,
+[data-theme="computer"] .section-icon svg rect,
+[data-theme="computer"] .section-icon svg polygon,
+[data-theme="computer"] .section-icon svg polyline,
+[data-theme="computer"] .section-icon svg line,
+[data-theme="computer"] .section-icon-center svg path,
+[data-theme="computer"] .section-icon-center svg circle,
+[data-theme="computer"] .section-icon-center svg rect,
+[data-theme="computer"] .section-icon-center svg polygon,
+[data-theme="computer"] .section-icon-center svg polyline,
+[data-theme="computer"] .section-icon-center svg line,
+[data-theme="computer"] .philosophy-icon svg path,
+[data-theme="computer"] .philosophy-icon svg circle,
+[data-theme="computer"] .philosophy-icon svg rect,
+[data-theme="computer"] .philosophy-icon svg polygon,
+[data-theme="computer"] .philosophy-icon svg polyline,
+[data-theme="computer"] .philosophy-icon svg line,
+[data-theme="computer"] .cta-icon svg path,
+[data-theme="computer"] .cta-icon svg circle,
+[data-theme="computer"] .cta-icon svg rect,
+[data-theme="computer"] .cta-icon svg polygon,
+[data-theme="computer"] .cta-icon svg polyline,
+[data-theme="computer"] .cta-icon svg line {
+  stroke: var(--color-pure-white) !important;
+}
+
+[data-theme="computer"] .feature-icon svg[fill]:not([fill="none"]) path,
+[data-theme="computer"] .feature-icon svg[fill]:not([fill="none"]) circle,
+[data-theme="computer"] .feature-icon svg[fill]:not([fill="none"]) rect,
+[data-theme="computer"] .feature-icon svg[fill]:not([fill="none"]) polygon,
+[data-theme="computer"] .section-icon svg[fill]:not([fill="none"]) path,
+[data-theme="computer"] .section-icon svg[fill]:not([fill="none"]) circle,
+[data-theme="computer"] .section-icon svg[fill]:not([fill="none"]) rect,
+[data-theme="computer"] .section-icon svg[fill]:not([fill="none"]) polygon,
+[data-theme="computer"] .section-icon-center svg[fill]:not([fill="none"]) path,
+[data-theme="computer"]
+  .section-icon-center
+  svg[fill]:not([fill="none"])
+  circle,
+[data-theme="computer"] .section-icon-center svg[fill]:not([fill="none"]) rect,
+[data-theme="computer"]
+  .section-icon-center
+  svg[fill]:not([fill="none"])
+  polygon,
+[data-theme="computer"] .philosophy-icon svg[fill]:not([fill="none"]) path,
+[data-theme="computer"] .philosophy-icon svg[fill]:not([fill="none"]) circle,
+[data-theme="computer"] .philosophy-icon svg[fill]:not([fill="none"]) rect,
+[data-theme="computer"] .philosophy-icon svg[fill]:not([fill="none"]) polygon,
+[data-theme="computer"] .cta-icon svg[fill]:not([fill="none"]) path,
+[data-theme="computer"] .cta-icon svg[fill]:not([fill="none"]) circle,
+[data-theme="computer"] .cta-icon svg[fill]:not([fill="none"]) rect,
+[data-theme="computer"] .cta-icon svg[fill]:not([fill="none"]) polygon {
+  fill: var(--color-pure-white) !important;
+}
+
+[data-theme="computer"] .feature-icon svg circle[fill="currentColor"],
+[data-theme="computer"] .feature-icon svg path[fill="currentColor"],
+[data-theme="computer"] .feature-icon svg rect[fill="currentColor"],
+[data-theme="computer"] .feature-icon svg polygon[fill="currentColor"],
+[data-theme="computer"] .section-icon svg circle[fill="currentColor"],
+[data-theme="computer"] .section-icon svg path[fill="currentColor"],
+[data-theme="computer"] .section-icon svg rect[fill="currentColor"],
+[data-theme="computer"] .section-icon svg polygon[fill="currentColor"],
+[data-theme="computer"] .section-icon-center svg circle[fill="currentColor"],
+[data-theme="computer"] .section-icon-center svg path[fill="currentColor"],
+[data-theme="computer"] .section-icon-center svg rect[fill="currentColor"],
+[data-theme="computer"] .section-icon-center svg polygon[fill="currentColor"],
+[data-theme="computer"] .philosophy-icon svg circle[fill="currentColor"],
+[data-theme="computer"] .philosophy-icon svg path[fill="currentColor"],
+[data-theme="computer"] .philosophy-icon svg rect[fill="currentColor"],
+[data-theme="computer"] .philosophy-icon svg polygon[fill="currentColor"],
+[data-theme="computer"] .cta-icon svg circle[fill="currentColor"],
+[data-theme="computer"] .cta-icon svg path[fill="currentColor"],
+[data-theme="computer"] .cta-icon svg rect[fill="currentColor"],
+[data-theme="computer"] .cta-icon svg polygon[fill="currentColor"] {
+  fill: var(--color-pure-white) !important;
 }
 
 /* Computer Mode - Icon Contrast Fix */
@@ -311,20 +596,19 @@ svg[fill]:not([fill="none"]) polygon {
   height: 100%;
   pointer-events: none;
   z-index: -1;
-  background-image:
-    repeating-linear-gradient(
+  background-image: repeating-linear-gradient(
       0deg,
       transparent,
       transparent 19px,
-      rgba(255, 255, 255, 0.03) 19px,
-      rgba(255, 255, 255, 0.03) 20px
+      rgba(0, 240, 255, 0.08) 19px,
+      rgba(0, 240, 255, 0.08) 20px
     ),
     repeating-linear-gradient(
       90deg,
       transparent,
       transparent 9px,
-      rgba(255, 255, 255, 0.03) 9px,
-      rgba(255, 255, 255, 0.03) 10px
+      rgba(0, 136, 255, 0.06) 9px,
+      rgba(0, 136, 255, 0.06) 10px
     );
   animation: scanlines 8s linear infinite;
 }
@@ -344,19 +628,22 @@ svg[fill]:not([fill="none"]) polygon {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  color: rgba(255, 255, 255, 0.6);
-  font-family: "Inconsolata", monospace;
+  color: rgba(0, 240, 255, 0.8);
+  font-family: "JetBrains Mono", monospace;
   font-size: 16px;
   animation: blink 1s step-end infinite;
   pointer-events: none;
   z-index: 9999;
+  text-shadow: 0 0 8px rgba(0, 240, 255, 0.6), 0 0 15px rgba(0, 136, 255, 0.4);
 }
 
 @keyframes blink {
-  0%, 50% {
+  0%,
+  50% {
     opacity: 1;
   }
-  51%, 100% {
+  51%,
+  100% {
     opacity: 0;
   }
 }
@@ -554,7 +841,7 @@ p {
 }
 
 [data-theme="computer"] .btn-primary:hover {
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.6), 0 0 40px rgba(0, 136, 255, 0.3);
   transform: scale(1.02);
 }
 
@@ -572,7 +859,7 @@ p {
 [data-theme="computer"] .btn-secondary:hover {
   background: var(--bg-secondary);
   border-color: var(--border-strong);
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.4), 0 0 30px rgba(0, 136, 255, 0.2);
 }
 
 /* Clean card system - Manifesto style */
@@ -639,7 +926,7 @@ p {
 
 [data-theme="computer"] .card:hover {
   border-color: var(--border-strong);
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 30px rgba(0, 240, 255, 0.25), 0 0 50px rgba(0, 136, 255, 0.15);
   transform: translateY(-2px);
 }
 
@@ -972,8 +1259,8 @@ p {
 
 /* Selection */
 ::selection {
-  background: var(--accent-glow);
-  color: var(--text-inverse);
+  background: rgba(0, 136, 255, 0.2);
+  color: #001a33;
 }
 
 /* Scrollbar - minimal Notion style */
@@ -1067,7 +1354,8 @@ p {
 }
 
 @keyframes glitch {
-  0%, 100% {
+  0%,
+  100% {
     transform: translate(0);
   }
   20% {
@@ -1108,10 +1396,9 @@ p {
   height: 100%;
   pointer-events: none;
   z-index: 0;
-  opacity: 0.05;
-  background-image:
-    linear-gradient(transparent 50%, rgba(255, 255, 255, 0.02) 50%),
-    linear-gradient(90deg, transparent 50%, rgba(255, 255, 255, 0.02) 50%);
+  opacity: 0.08;
+  background-image: linear-gradient(transparent 50%, rgba(0, 255, 65, 0.03) 50%),
+    linear-gradient(90deg, transparent 50%, rgba(0, 255, 65, 0.03) 50%);
   background-size: 2px 2px;
   animation: matrix-scroll 20s linear infinite;
 }
@@ -1253,11 +1540,6 @@ p {
   opacity: 1 !important;
 }
 
-[data-theme="computer"] .nav-logo::before {
-  content: "$ ";
-  color: var(--text-secondary);
-}
-
 /* Computer Mode - Scrollbar */
 [data-theme="computer"] ::-webkit-scrollbar {
   width: 8px;
@@ -1269,7 +1551,8 @@ p {
 }
 
 [data-theme="computer"] ::-webkit-scrollbar-thumb:hover {
-  background: var(--text-primary);
+  background: var(--color-cyber-blue);
+  box-shadow: 0 0 5px rgba(0, 136, 255, 0.5);
 }
 
 /* Startup Boot Sequence Animation (for fun) */
@@ -1307,8 +1590,9 @@ p {
 
 /* Terminal-style Selection */
 [data-theme="computer"] ::selection {
-  background: var(--text-primary);
-  color: var(--bg-primary);
+  background: rgba(0, 136, 255, 0.3);
+  color: var(--color-cyber-blue);
+  text-shadow: 0 0 5px rgba(0, 136, 255, 0.5);
 }
 
 /* Computer Mode - Remove animations in reduced motion */

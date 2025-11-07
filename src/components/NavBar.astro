@@ -30,11 +30,6 @@
     </ul>
 
     <div class="nav-cta">
-      <button class="theme-toggle" aria-label="Toggle between Human and Computer mode">
-        <span class="theme-label human-mode">HUMAN</span>
-        <span class="theme-label computer-mode">COMPUTER</span>
-        <div class="toggle-slider"></div>
-      </button>
       <a href="/publish" class="btn btn-primary">
         <span>Submit</span>
         <svg
@@ -55,34 +50,6 @@
 </nav>
 
 <script>
-  // Theme toggle functionality - Human vs Computer mode
-  const themeToggle = document.querySelector(".theme-toggle");
-  const html = document.documentElement;
-
-  // Get current theme from localStorage or default to 'human'
-  const currentTheme = localStorage.getItem("theme") || "human";
-  html.setAttribute("data-theme", currentTheme);
-
-  // Update toggle button state
-  function updateToggleState(theme: string) {
-    if (theme === "computer") {
-      themeToggle?.classList.add("computer-active");
-    } else {
-      themeToggle?.classList.remove("computer-active");
-    }
-  }
-
-  updateToggleState(currentTheme);
-
-  themeToggle?.addEventListener("click", () => {
-    const currentTheme = html.getAttribute("data-theme");
-    const newTheme = currentTheme === "computer" ? "human" : "computer";
-
-    html.setAttribute("data-theme", newTheme);
-    localStorage.setItem("theme", newTheme);
-    updateToggleState(newTheme);
-  });
-
   // Active link highlighting
   const currentPath = window.location.pathname;
   const navLinks = document.querySelectorAll(".nav-link");
@@ -216,94 +183,6 @@
     display: flex;
     align-items: center;
     gap: var(--space-3);
-  }
-
-  .theme-toggle {
-    background: var(--bg-elevated);
-    border: 1px solid var(--border-primary);
-    border-radius: var(--radius-lg);
-    padding: var(--space-1);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    color: var(--text-secondary);
-    display: flex;
-    align-items: center;
-    gap: var(--space-2);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .theme-label {
-    font-size: var(--font-size-xs);
-    font-weight: var(--font-weight-semibold);
-    padding: var(--space-1) var(--space-3);
-    position: relative;
-    z-index: 2;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-
-  .theme-toggle .human-mode {
-    color: var(--text-primary);
-  }
-
-  .theme-toggle .computer-mode {
-    color: var(--text-tertiary);
-  }
-
-  .theme-toggle.computer-active .human-mode {
-    color: var(--text-tertiary);
-  }
-
-  .theme-toggle.computer-active .computer-mode {
-    color: var(--text-primary);
-  }
-
-  .toggle-slider {
-    position: absolute;
-    top: 4px;
-    left: 4px;
-    width: calc(50% - 4px);
-    height: calc(100% - 8px);
-    background: var(--accent-soft);
-    border: 1px solid var(--border-primary);
-    border-radius: var(--radius-md);
-    transition: transform 0.3s ease, background 0.3s ease;
-    z-index: 1;
-  }
-
-  .theme-toggle.computer-active .toggle-slider {
-    transform: translateX(100%);
-    background: var(--accent-glow);
-  }
-
-  .theme-toggle:hover {
-    border-color: var(--border-strong);
-    box-shadow: var(--shadow-sm);
-  }
-
-  .theme-toggle:focus-visible {
-    outline: 2px solid var(--accent);
-    outline-offset: 2px;
-    box-shadow: var(--shadow-glow);
-  }
-
-  /* Computer Mode - Toggle Style */
-  [data-theme="computer"] .theme-toggle {
-    border-radius: 0;
-    border: 2px solid var(--border-primary);
-    background: var(--bg-elevated);
-  }
-
-  [data-theme="computer"] .toggle-slider {
-    border-radius: 0;
-    background: var(--text-primary);
-    border-color: var(--text-primary);
-  }
-
-  [data-theme="computer"] .theme-toggle:hover {
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
   }
 
   /* Mobile responsiveness */

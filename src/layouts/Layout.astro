@@ -22,14 +22,14 @@ const siteName = "orbies.dev";
 ---
 
 <!doctype html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="computer">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
     <meta name="keywords" content={keywords} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="theme-color" content="#6b5b4f" />
+    <meta name="theme-color" content="#000000" />
 
     <!-- Canonical URL -->
     <link rel="canonical" href={canonicalURL} />
@@ -67,15 +67,12 @@ const siteName = "orbies.dev";
 
     <link
       rel="icon"
-      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2240%22 fill=%22%236b5b4f%22/></svg>"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2240%22 fill=%22%2300f0ff%22/></svg>"
     />
     <title>{title}</title>
     <script is:inline>
-      // Theme initialization - prevent flash
-      (function () {
-        const savedTheme = localStorage.getItem("theme") || "light";
-        document.documentElement.setAttribute("data-theme", savedTheme);
-      })();
+      // Set computer theme permanently
+      document.documentElement.setAttribute("data-theme", "computer");
     </script>
   </head>
   <body>

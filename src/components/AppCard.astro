@@ -109,18 +109,18 @@ const { name, description, icon, tech, buildTime, github, stars } = Astro.props;
   .app-card {
     display: flex;
     flex-direction: column;
-    gap: var(--space-6, 24px);
-    padding: var(--space-8, 32px);
-    background: var(--bg-glass, rgba(251, 251, 251, 0.8));
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid var(--border-primary, rgba(44, 44, 44, 0.08));
-    border-radius: var(--radius-xl, 16px);
-    transition: all var(--transition-normal, 0.25s ease);
+    gap: var(--space-6);
+    padding: var(--space-8);
+    background: var(--bg-elevated);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border: 2px solid var(--border-primary);
+    border-radius: 0;
+    transition: all var(--transition-normal);
     height: 100%;
     position: relative;
     overflow: hidden;
-    box-shadow: var(--shadow-sm, 0 2px 4px rgba(0, 0, 0, 0.06));
+    box-shadow: none;
   }
 
   .app-card::before {
@@ -132,9 +132,9 @@ const { name, description, icon, tech, buildTime, github, stars } = Astro.props;
     bottom: 0;
     background: linear-gradient(
       135deg,
-      rgba(99, 102, 241, 0.05) 0%,
-      rgba(168, 85, 247, 0.05) 50%,
-      rgba(236, 72, 153, 0.05) 100%
+      rgba(0, 255, 65, 0.05) 0%,
+      rgba(0, 255, 65, 0.08) 50%,
+      rgba(0, 255, 65, 0.05) 100%
     );
     opacity: 0;
     transition: opacity var(--transition-normal);
@@ -153,7 +153,7 @@ const { name, description, icon, tech, buildTime, github, stars } = Astro.props;
     height: 200%;
     background: radial-gradient(
       circle at center,
-      rgba(99, 102, 241, 0.03) 0%,
+      rgba(0, 255, 65, 0.05) 0%,
       transparent 50%
     );
     animation: rotate 20s linear infinite;
@@ -167,11 +167,11 @@ const { name, description, icon, tech, buildTime, github, stars } = Astro.props;
   }
 
   .app-card:hover {
-    border-color: var(--border-strong, rgba(44, 44, 44, 0.12));
+    border-color: var(--border-strong);
     transform: translateY(-4px);
     box-shadow:
-      var(--shadow-lg, 0 8px 16px rgba(0, 0, 0, 0.12)),
-      0 0 20px var(--accent-glow, rgba(107, 91, 79, 0.15));
+      var(--shadow-lg),
+      0 0 25px rgba(0, 255, 65, 0.2);
   }
 
   /* Card Header */
@@ -214,24 +214,26 @@ const { name, description, icon, tech, buildTime, github, stars } = Astro.props;
   .orb-outer {
     width: 100%;
     height: 100%;
-    border-color: rgba(99, 102, 241, 0.2);
+    border-color: rgba(0, 255, 65, 0.3);
+    background: transparent;
     animation: pulse 3s ease-in-out infinite;
   }
 
   .orb-middle {
     width: 75%;
     height: 75%;
-    border-color: rgba(168, 85, 247, 0.3);
+    border-color: rgba(0, 255, 65, 0.4);
+    background: transparent;
     animation: pulse 3s ease-in-out infinite 0.5s;
   }
 
   .orb-inner {
     width: 50%;
     height: 50%;
-    border-color: rgba(236, 72, 153, 0.4);
+    border-color: rgba(0, 255, 65, 0.5);
     background: radial-gradient(
       circle,
-      rgba(236, 72, 153, 0.1) 0%,
+      rgba(0, 255, 65, 0.1) 0%,
       transparent 70%
     );
     animation: pulse 3s ease-in-out infinite 1s;
@@ -249,15 +251,15 @@ const { name, description, icon, tech, buildTime, github, stars } = Astro.props;
   }
 
   .app-card:hover .orb-outer {
-    border-color: rgba(99, 102, 241, 0.4);
+    border-color: rgba(0, 255, 65, 0.5);
   }
 
   .app-card:hover .orb-middle {
-    border-color: rgba(168, 85, 247, 0.5);
+    border-color: rgba(0, 255, 65, 0.6);
   }
 
   .app-card:hover .orb-inner {
-    border-color: rgba(236, 72, 153, 0.6);
+    border-color: rgba(0, 255, 65, 0.8);
   }
 
   .app-info {
@@ -302,24 +304,24 @@ const { name, description, icon, tech, buildTime, github, stars } = Astro.props;
   }
 
   .tech-badge {
-    background: var(--bg-glass, rgba(251, 251, 251, 0.8));
-    color: var(--text-secondary, #404040);
-    padding: var(--space-1, 4px) var(--space-3, 12px);
-    border-radius: var(--radius-full, 9999px);
-    font-size: var(--font-size-xs, 11px);
+    background: transparent;
+    color: var(--text-primary);
+    padding: var(--space-1) var(--space-3);
+    border-radius: 0;
+    font-size: var(--font-size-xs);
     font-weight: 500;
-    border: 1px solid var(--border-primary, rgba(44, 44, 44, 0.08));
-    transition: all var(--transition-fast, 0.15s ease);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--border-primary);
+    transition: all var(--transition-fast);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
   }
 
   .tech-badge:hover {
-    background: var(--bg-glass-strong, rgba(251, 251, 251, 0.94));
-    color: var(--text-primary, #2c2c2c);
-    border-color: var(--border-strong, rgba(44, 44, 44, 0.12));
+    background: transparent;
+    color: var(--text-primary);
+    border-color: var(--border-strong);
     transform: translateY(-1px);
-    box-shadow: var(--shadow-sm, 0 2px 4px rgba(0, 0, 0, 0.06));
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.2);
   }
 
   .app-stats {
@@ -355,29 +357,29 @@ const { name, description, icon, tech, buildTime, github, stars } = Astro.props;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: var(--space-3, 12px);
-    padding: var(--space-4, 16px);
-    background: var(--bg-glass, rgba(251, 251, 251, 0.8));
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid var(--border-primary, rgba(44, 44, 44, 0.08));
-    border-radius: var(--radius-lg, 12px);
-    color: var(--text-secondary, #404040);
+    gap: var(--space-3);
+    padding: var(--space-4);
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border: 2px solid var(--border-primary);
+    border-radius: 0;
+    color: var(--text-primary);
     text-decoration: none;
-    font-size: var(--font-size-sm, 13px);
+    font-size: var(--font-size-sm);
     font-weight: 500;
-    transition: all var(--transition-fast, 0.15s ease);
+    transition: all var(--transition-fast);
     margin-top: auto;
     position: relative;
     z-index: 1;
   }
 
   .app-link:hover {
-    background: var(--bg-glass-strong, rgba(251, 251, 251, 0.94));
-    border-color: var(--border-strong, rgba(44, 44, 44, 0.12));
-    color: var(--text-primary, #2c2c2c);
+    background: transparent;
+    border-color: var(--border-strong);
+    color: var(--text-primary);
     transform: translateY(-2px);
-    box-shadow: var(--shadow-md, 0 4px 8px rgba(0, 0, 0, 0.08));
+    box-shadow: 0 0 15px rgba(0, 255, 65, 0.3);
   }
 
   .app-link :global(svg) {
