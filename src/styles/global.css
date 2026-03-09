@@ -1,69 +1,71 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600;700&display=swap");
 
 /* ============================================
-   DUAL-MODE DESIGN SYSTEM
-   Human Mode: Clean Green Theme
-   Computer Mode: Matrix Green Terminal
+   SONNET THEME
+   Warm parchment · Anthropic orange · Literary serif
    ============================================ */
 
 :root {
-  /* HUMAN MODE - Clean Simplistic White Theme */
-  --color-pure-white: #ffffff;
-  --color-pure-black: #000000;
-  --color-gray-50: #fafafa;
-  --color-gray-100: #f5f5f5;
-  --color-gray-200: #e5e5e5;
-  --color-gray-300: #d4d4d4;
-  --color-gray-400: #a3a3a3;
-  --color-gray-500: #737373;
-  --color-gray-600: #525252;
-  --color-gray-700: #404040;
-  --color-gray-800: #262626;
-  --color-gray-900: #171717;
+  /* Sonnet orange — Anthropic's signature */
+  --color-sonnet: #d97757;
+  --color-sonnet-dark: #b85e3e;
+  --color-sonnet-light: #e89b7a;
+  --color-sonnet-glow: rgba(217, 119, 87, 0.18);
+  --color-sonnet-soft: rgba(217, 119, 87, 0.07);
+  --color-sonnet-gas: rgba(217, 119, 87, 0.03);
 
-  /* Dynamic Backgrounds - Human (Light) Mode */
-  --bg-primary: var(--color-pure-white);
-  --bg-secondary: var(--color-gray-50);
-  --bg-tertiary: var(--color-gray-100);
-  --bg-elevated: var(--color-pure-white);
-  --bg-glass: rgba(255, 255, 255, 0.95);
-  --bg-glass-strong: rgba(255, 255, 255, 0.98);
-  --bg-blur: rgba(255, 255, 255, 0.92);
+  /* Parchment neutrals */
+  --color-ink: #1a1512;
+  --color-ink-soft: #2e2520;
+  --color-ink-light: #473c35;
+  --color-stone: #7a6e67;
+  --color-stone-light: #a89f99;
+  --color-stone-lighter: #cdc7c2;
+  --color-parchment: #faf8f5;
+  --color-parchment-warm: #f7f4f0;
+  --color-parchment-deep: #f2ede7;
 
-  /* Text Colors - Human (Light) Mode */
-  --text-primary: var(--color-gray-900);
-  --text-secondary: var(--color-gray-700);
-  --text-tertiary: var(--color-gray-600);
-  --text-quaternary: var(--color-gray-500);
-  --text-muted: var(--color-gray-400);
-  --text-inverse: var(--color-pure-white);
+  /* Backgrounds */
+  --bg-primary: var(--color-parchment);
+  --bg-secondary: var(--color-parchment-warm);
+  --bg-tertiary: var(--color-parchment-deep);
+  --bg-elevated: #fdfcfa;
+  --bg-glass: rgba(250, 248, 245, 0.82);
+  --bg-glass-strong: rgba(250, 248, 245, 0.96);
+  --bg-blur: rgba(250, 248, 245, 0.92);
 
-  /* Accent System - Minimal Black */
-  --accent: var(--color-pure-black);
-  --accent-hover: var(--color-gray-800);
-  --accent-light: var(--color-gray-700);
-  --accent-glow: rgba(0, 0, 0, 0.08);
-  --accent-soft: rgba(0, 0, 0, 0.04);
-  --accent-gas: rgba(0, 0, 0, 0.02);
+  /* Text */
+  --text-primary: var(--color-ink);
+  --text-secondary: var(--color-ink-soft);
+  --text-tertiary: var(--color-ink-light);
+  --text-quaternary: var(--color-stone);
+  --text-muted: var(--color-stone-light);
+  --text-inverse: var(--color-parchment);
 
-  /* Borders - Minimal Gray */
-  --border-primary: var(--color-gray-200);
-  --border-secondary: var(--color-gray-100);
-  --border-strong: var(--color-gray-300);
-  --border-glass: rgba(255, 255, 255, 0.8);
+  /* Accent */
+  --accent: var(--color-sonnet);
+  --accent-hover: var(--color-sonnet-dark);
+  --accent-light: var(--color-sonnet-light);
+  --accent-glow: var(--color-sonnet-glow);
+  --accent-soft: var(--color-sonnet-soft);
+  --accent-gas: var(--color-sonnet-gas);
 
-  /* Shadows - Minimal Gray */
-  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.04);
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
-  --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.08);
-  --shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.1);
-  --shadow-xl: 0 8px 24px rgba(0, 0, 0, 0.12);
-  --shadow-2xl: 0 16px 40px rgba(0, 0, 0, 0.15);
-  --shadow-glow: 0 0 0 1px rgba(0, 0, 0, 0.08);
-  --shadow-border: 0 0 0 1px var(--border-primary);
+  /* Borders */
+  --border-primary: rgba(26, 21, 18, 0.08);
+  --border-secondary: rgba(26, 21, 18, 0.05);
+  --border-strong: rgba(26, 21, 18, 0.13);
+  --border-glass: rgba(250, 248, 245, 0.4);
 
-  /* Apple Spacing System */
+  /* Shadows */
+  --shadow-xs: 0 1px 2px rgba(26, 21, 18, 0.04);
+  --shadow-sm: 0 2px 4px rgba(26, 21, 18, 0.06);
+  --shadow-md: 0 4px 8px rgba(26, 21, 18, 0.08);
+  --shadow-lg: 0 8px 16px rgba(26, 21, 18, 0.10);
+  --shadow-xl: 0 16px 32px rgba(26, 21, 18, 0.14);
+  --shadow-2xl: 0 24px 48px rgba(26, 21, 18, 0.18);
+  --shadow-glow: 0 0 28px var(--accent-glow);
+
+  /* Spacing */
   --space-0: 0;
   --space-1: 4px;
   --space-2: 8px;
@@ -79,17 +81,17 @@
   --space-24: 96px;
   --space-32: 128px;
 
-  /* Minimal Border Radius - Notion style */
-  --radius-xs: 2px;
-  --radius-sm: 3px;
-  --radius-md: 4px;
-  --radius-lg: 6px;
-  --radius-xl: 8px;
-  --radius-2xl: 10px;
-  --radius-3xl: 12px;
+  /* Border radius */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 20px;
+  --radius-3xl: 24px;
   --radius-full: 9999px;
 
-  /* Apple Typography */
+  /* Typography scale */
   --font-size-xs: 11px;
   --font-size-sm: 13px;
   --font-size-base: 15px;
@@ -110,7 +112,7 @@
   --font-weight-extrabold: 800;
   --font-weight-black: 900;
 
-  /* Apple Animations */
+  /* Animations */
   --ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
   --ease-in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1);
   --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -121,18 +123,18 @@
   --transition-slow: 0.4s var(--ease-apple);
   --transition-spring: 0.5s var(--ease-spring);
 
-  /* Layout System */
+  /* Layout */
   --container-max: 1200px;
   --container-padding: 20px;
   --header-height: 60px;
 
-  /* Minimal blur - rarely used in Notion */
-  --blur-sm: 4px;
-  --blur-md: 8px;
-  --blur-lg: 12px;
-  --blur-xl: 20px;
+  /* Blur */
+  --blur-sm: 8px;
+  --blur-md: 16px;
+  --blur-lg: 24px;
+  --blur-xl: 40px;
 
-  /* Z-index scale */
+  /* Z-index */
   --z-base: 1;
   --z-elevated: 10;
   --z-sticky: 100;
@@ -141,51 +143,33 @@
   --z-modal: 1200;
 }
 
-[data-theme="computer"] {
-  /* COMPUTER MODE - Cyberpunk Terminal */
-  --color-cyber-cyan: #00f0ff;
-  --color-cyber-blue: #0088ff;
-  --color-cyber-purple: #b000ff;
-  --color-cyber-pink: #ff00aa;
-  --color-cyber-dark: #0a0e1a;
-  --color-cyber-darker: #050810;
+[data-theme="dark"] {
+  --bg-primary: #100e0c;
+  --bg-secondary: #161210;
+  --bg-tertiary: #1d1915;
+  --bg-elevated: #131109;
+  --bg-glass: rgba(20, 17, 13, 0.85);
+  --bg-glass-strong: rgba(20, 17, 13, 0.97);
+  --bg-blur: rgba(16, 14, 12, 0.94);
 
-  --bg-primary: var(--color-cyber-darker);
-  --bg-secondary: #0d1220;
-  --bg-tertiary: #151b2e;
-  --bg-elevated: var(--color-cyber-dark);
-  --bg-glass: rgba(10, 14, 26, 0.92);
-  --bg-glass-strong: rgba(10, 14, 26, 0.96);
-  --bg-blur: rgba(10, 14, 26, 0.94);
+  --text-primary: #f2ede7;
+  --text-secondary: #d4cdc7;
+  --text-tertiary: #a09890;
+  --text-quaternary: #6e6560;
+  --text-muted: #4a4540;
+  --text-inverse: var(--color-ink);
 
-  --text-primary: var(--color-cyber-cyan);
-  --text-secondary: #66d9ff;
-  --text-tertiary: #4488cc;
-  --text-quaternary: #3366aa;
-  --text-muted: #2255aa;
-  --text-inverse: var(--color-cyber-darker);
+  --border-primary: rgba(242, 237, 231, 0.08);
+  --border-secondary: rgba(242, 237, 231, 0.05);
+  --border-strong: rgba(242, 237, 231, 0.12);
+  --border-glass: rgba(0, 0, 0, 0.4);
 
-  --accent: var(--color-cyber-cyan);
-  --accent-hover: var(--color-cyber-blue);
-  --accent-light: #33f5ff;
-  --accent-glow: rgba(0, 240, 255, 0.25);
-  --accent-soft: rgba(0, 240, 255, 0.12);
-  --accent-gas: rgba(0, 240, 255, 0.06);
-
-  --border-primary: rgba(0, 240, 255, 0.25);
-  --border-secondary: rgba(0, 240, 255, 0.12);
-  --border-strong: rgba(0, 240, 255, 0.45);
-  --border-glass: rgba(10, 14, 26, 0.85);
-
-  --shadow-xs: none;
-  --shadow-sm: none;
-  --shadow-md: none;
-  --shadow-lg: none;
-  --shadow-xl: none;
-  --shadow-2xl: none;
-  --shadow-glow: 0 0 20px rgba(0, 240, 255, 0.4),
-    0 0 40px rgba(0, 136, 255, 0.2);
-  --shadow-border: 0 0 0 1px var(--border-primary);
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.5);
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.6);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.7);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.75);
+  --shadow-xl: 0 16px 32px rgba(0, 0, 0, 0.8);
+  --shadow-2xl: 0 24px 48px rgba(0, 0, 0, 0.9);
 }
 
 /* ============================================
@@ -205,14 +189,13 @@ html {
 }
 
 body {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui,
-    sans-serif;
+  font-family: "DM Sans", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
   background: var(--bg-primary);
   color: var(--text-primary);
   font-size: var(--font-size-base);
   line-height: 1.6;
   font-weight: var(--font-weight-normal);
-  transition: background-color 0.3s ease, color 0.3s ease, font-family 0.3s ease;
+  transition: background-color var(--transition-slow), color var(--transition-slow);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -220,489 +203,105 @@ body {
   min-height: 100vh;
   padding-top: var(--header-height);
   position: relative;
-  letter-spacing: -0.004em;
+  letter-spacing: -0.011em;
 }
 
-/* Computer Mode Typography */
-[data-theme="computer"] body,
-[data-theme="computer"] * {
-  font-family: "JetBrains Mono", "SF Mono", "Monaco", "Cascadia Code", monospace !important;
-  letter-spacing: -0.01em;
-  font-feature-settings: "liga" 0, "calt" 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-/* Computer Mode - Remove all decorative backgrounds */
-[data-theme="computer"] .philosophy-icon,
-[data-theme="computer"] .step-number,
-[data-theme="computer"] .badge-dot,
-[data-theme="computer"] .author-avatar {
-  background: transparent !important;
-}
-
-/* ============================================
-   ICON SYSTEM - Both Human and Computer Modes
-   ============================================ */
-
-/* Base icon styles - use black color as primary in human mode */
-svg,
-svg.icon {
-  color: var(--color-pure-black);
-  transition: all var(--transition-fast);
-}
-
-/* Ensure SVG children inherit stroke color properly */
-svg path,
-svg circle,
-svg rect,
-svg polygon,
-svg polyline,
-svg line {
-  stroke: currentColor;
-}
-
-/* For icons with fill, inherit currentColor */
-svg[fill]:not([fill="none"]) path,
-svg[fill]:not([fill="none"]) circle,
-svg[fill]:not([fill="none"]) rect,
-svg[fill]:not([fill="none"]) polygon {
-  fill: currentColor;
-}
-
-/* Manifesto page icons - use black color in human mode, matrix green in computer mode */
-.manifesto-content svg,
-.manifesto-hero svg {
-  color: var(--color-pure-black);
-  stroke: var(--color-pure-black);
-}
-
-.manifesto-content svg path,
-.manifesto-content svg circle,
-.manifesto-content svg rect,
-.manifesto-content svg polygon,
-.manifesto-content svg polyline,
-.manifesto-content svg line,
-.manifesto-hero svg path,
-.manifesto-hero svg circle,
-.manifesto-hero svg rect,
-.manifesto-hero svg polygon,
-.manifesto-hero svg polyline,
-.manifesto-hero svg line {
-  stroke: var(--color-pure-black);
-}
-
-.manifesto-content svg[fill]:not([fill="none"]) path,
-.manifesto-content svg[fill]:not([fill="none"]) circle,
-.manifesto-content svg[fill]:not([fill="none"]) rect,
-.manifesto-content svg[fill]:not([fill="none"]) polygon,
-.manifesto-hero svg[fill]:not([fill="none"]) path,
-.manifesto-hero svg[fill]:not([fill="none"]) circle,
-.manifesto-hero svg[fill]:not([fill="none"]) rect,
-.manifesto-hero svg[fill]:not([fill="none"]) polygon {
-  fill: var(--color-pure-black);
-}
-
-/* For filled elements with explicit fill="currentColor" */
-.manifesto-content svg circle[fill="currentColor"],
-.manifesto-content svg path[fill="currentColor"],
-.manifesto-content svg rect[fill="currentColor"],
-.manifesto-content svg polygon[fill="currentColor"],
-.manifesto-hero svg circle[fill="currentColor"],
-.manifesto-hero svg path[fill="currentColor"],
-.manifesto-hero svg rect[fill="currentColor"],
-.manifesto-hero svg polygon[fill="currentColor"] {
-  fill: var(--color-pure-black);
-}
-
-/* Computer Mode - Override manifesto icons to use matrix green */
-[data-theme="computer"] .manifesto-content svg,
-[data-theme="computer"] .manifesto-hero svg {
-  color: var(--color-matrix-green) !important;
-  stroke: var(--color-matrix-green) !important;
-}
-
-[data-theme="computer"] .manifesto-content svg path,
-[data-theme="computer"] .manifesto-content svg circle,
-[data-theme="computer"] .manifesto-content svg rect,
-[data-theme="computer"] .manifesto-content svg polygon,
-[data-theme="computer"] .manifesto-content svg polyline,
-[data-theme="computer"] .manifesto-content svg line,
-[data-theme="computer"] .manifesto-hero svg path,
-[data-theme="computer"] .manifesto-hero svg circle,
-[data-theme="computer"] .manifesto-hero svg rect,
-[data-theme="computer"] .manifesto-hero svg polygon,
-[data-theme="computer"] .manifesto-hero svg polyline,
-[data-theme="computer"] .manifesto-hero svg line {
-  stroke: var(--color-matrix-green) !important;
-}
-
-[data-theme="computer"] .manifesto-content svg[fill]:not([fill="none"]) path,
-[data-theme="computer"] .manifesto-content svg[fill]:not([fill="none"]) circle,
-[data-theme="computer"] .manifesto-content svg[fill]:not([fill="none"]) rect,
-[data-theme="computer"] .manifesto-content svg[fill]:not([fill="none"]) polygon,
-[data-theme="computer"] .manifesto-hero svg[fill]:not([fill="none"]) path,
-[data-theme="computer"] .manifesto-hero svg[fill]:not([fill="none"]) circle,
-[data-theme="computer"] .manifesto-hero svg[fill]:not([fill="none"]) rect,
-[data-theme="computer"] .manifesto-hero svg[fill]:not([fill="none"]) polygon {
-  fill: var(--color-matrix-green) !important;
-}
-
-[data-theme="computer"] .manifesto-content svg circle[fill="currentColor"],
-[data-theme="computer"] .manifesto-content svg path[fill="currentColor"],
-[data-theme="computer"] .manifesto-content svg rect[fill="currentColor"],
-[data-theme="computer"] .manifesto-content svg polygon[fill="currentColor"],
-[data-theme="computer"] .manifesto-hero svg circle[fill="currentColor"],
-[data-theme="computer"] .manifesto-hero svg path[fill="currentColor"],
-[data-theme="computer"] .manifesto-hero svg rect[fill="currentColor"],
-[data-theme="computer"] .manifesto-hero svg polygon[fill="currentColor"] {
-  fill: var(--color-matrix-green) !important;
-}
-
-/* Icons inside green background containers - use black in human mode, white in computer mode */
-.feature-icon svg,
-.section-icon svg,
-.section-icon-center svg,
-.philosophy-icon svg,
-.cta-icon svg {
-  color: var(--color-pure-black) !important;
-  stroke: var(--color-pure-black) !important;
-}
-
-.feature-icon svg path,
-.feature-icon svg circle,
-.feature-icon svg rect,
-.feature-icon svg polygon,
-.feature-icon svg polyline,
-.feature-icon svg line,
-.section-icon svg path,
-.section-icon svg circle,
-.section-icon svg rect,
-.section-icon svg polygon,
-.section-icon svg polyline,
-.section-icon svg line,
-.section-icon-center svg path,
-.section-icon-center svg circle,
-.section-icon-center svg rect,
-.section-icon-center svg polygon,
-.section-icon-center svg polyline,
-.section-icon-center svg line,
-.philosophy-icon svg path,
-.philosophy-icon svg circle,
-.philosophy-icon svg rect,
-.philosophy-icon svg polygon,
-.philosophy-icon svg polyline,
-.philosophy-icon svg line,
-.cta-icon svg path,
-.cta-icon svg circle,
-.cta-icon svg rect,
-.cta-icon svg polygon,
-.cta-icon svg polyline,
-.cta-icon svg line {
-  stroke: var(--color-pure-black) !important;
-}
-
-.feature-icon svg[fill]:not([fill="none"]) path,
-.feature-icon svg[fill]:not([fill="none"]) circle,
-.feature-icon svg[fill]:not([fill="none"]) rect,
-.feature-icon svg[fill]:not([fill="none"]) polygon,
-.section-icon svg[fill]:not([fill="none"]) path,
-.section-icon svg[fill]:not([fill="none"]) circle,
-.section-icon svg[fill]:not([fill="none"]) rect,
-.section-icon svg[fill]:not([fill="none"]) polygon,
-.section-icon-center svg[fill]:not([fill="none"]) path,
-.section-icon-center svg[fill]:not([fill="none"]) circle,
-.section-icon-center svg[fill]:not([fill="none"]) rect,
-.section-icon-center svg[fill]:not([fill="none"]) polygon,
-.philosophy-icon svg[fill]:not([fill="none"]) path,
-.philosophy-icon svg[fill]:not([fill="none"]) circle,
-.philosophy-icon svg[fill]:not([fill="none"]) rect,
-.philosophy-icon svg[fill]:not([fill="none"]) polygon,
-.cta-icon svg[fill]:not([fill="none"]) path,
-.cta-icon svg[fill]:not([fill="none"]) circle,
-.cta-icon svg[fill]:not([fill="none"]) rect,
-.cta-icon svg[fill]:not([fill="none"]) polygon {
-  fill: var(--color-pure-black) !important;
-}
-
-.feature-icon svg circle[fill="currentColor"],
-.feature-icon svg path[fill="currentColor"],
-.feature-icon svg rect[fill="currentColor"],
-.feature-icon svg polygon[fill="currentColor"],
-.section-icon svg circle[fill="currentColor"],
-.section-icon svg path[fill="currentColor"],
-.section-icon svg rect[fill="currentColor"],
-.section-icon svg polygon[fill="currentColor"],
-.section-icon-center svg circle[fill="currentColor"],
-.section-icon-center svg path[fill="currentColor"],
-.section-icon-center svg rect[fill="currentColor"],
-.section-icon-center svg polygon[fill="currentColor"],
-.philosophy-icon svg circle[fill="currentColor"],
-.philosophy-icon svg path[fill="currentColor"],
-.philosophy-icon svg rect[fill="currentColor"],
-.philosophy-icon svg polygon[fill="currentColor"],
-.cta-icon svg circle[fill="currentColor"],
-.cta-icon svg path[fill="currentColor"],
-.cta-icon svg rect[fill="currentColor"],
-.cta-icon svg polygon[fill="currentColor"] {
-  fill: var(--color-pure-black) !important;
-}
-
-/* Computer Mode - Override icons in green backgrounds to use white */
-[data-theme="computer"] .feature-icon svg,
-[data-theme="computer"] .section-icon svg,
-[data-theme="computer"] .section-icon-center svg,
-[data-theme="computer"] .philosophy-icon svg,
-[data-theme="computer"] .cta-icon svg {
-  color: var(--bg-primary) !important;
-  stroke: var(--color-pure-white) !important;
-}
-
-[data-theme="computer"] .feature-icon svg path,
-[data-theme="computer"] .feature-icon svg circle,
-[data-theme="computer"] .feature-icon svg rect,
-[data-theme="computer"] .feature-icon svg polygon,
-[data-theme="computer"] .feature-icon svg polyline,
-[data-theme="computer"] .feature-icon svg line,
-[data-theme="computer"] .section-icon svg path,
-[data-theme="computer"] .section-icon svg circle,
-[data-theme="computer"] .section-icon svg rect,
-[data-theme="computer"] .section-icon svg polygon,
-[data-theme="computer"] .section-icon svg polyline,
-[data-theme="computer"] .section-icon svg line,
-[data-theme="computer"] .section-icon-center svg path,
-[data-theme="computer"] .section-icon-center svg circle,
-[data-theme="computer"] .section-icon-center svg rect,
-[data-theme="computer"] .section-icon-center svg polygon,
-[data-theme="computer"] .section-icon-center svg polyline,
-[data-theme="computer"] .section-icon-center svg line,
-[data-theme="computer"] .philosophy-icon svg path,
-[data-theme="computer"] .philosophy-icon svg circle,
-[data-theme="computer"] .philosophy-icon svg rect,
-[data-theme="computer"] .philosophy-icon svg polygon,
-[data-theme="computer"] .philosophy-icon svg polyline,
-[data-theme="computer"] .philosophy-icon svg line,
-[data-theme="computer"] .cta-icon svg path,
-[data-theme="computer"] .cta-icon svg circle,
-[data-theme="computer"] .cta-icon svg rect,
-[data-theme="computer"] .cta-icon svg polygon,
-[data-theme="computer"] .cta-icon svg polyline,
-[data-theme="computer"] .cta-icon svg line {
-  stroke: var(--color-pure-white) !important;
-}
-
-[data-theme="computer"] .feature-icon svg[fill]:not([fill="none"]) path,
-[data-theme="computer"] .feature-icon svg[fill]:not([fill="none"]) circle,
-[data-theme="computer"] .feature-icon svg[fill]:not([fill="none"]) rect,
-[data-theme="computer"] .feature-icon svg[fill]:not([fill="none"]) polygon,
-[data-theme="computer"] .section-icon svg[fill]:not([fill="none"]) path,
-[data-theme="computer"] .section-icon svg[fill]:not([fill="none"]) circle,
-[data-theme="computer"] .section-icon svg[fill]:not([fill="none"]) rect,
-[data-theme="computer"] .section-icon svg[fill]:not([fill="none"]) polygon,
-[data-theme="computer"] .section-icon-center svg[fill]:not([fill="none"]) path,
-[data-theme="computer"]
-  .section-icon-center
-  svg[fill]:not([fill="none"])
-  circle,
-[data-theme="computer"] .section-icon-center svg[fill]:not([fill="none"]) rect,
-[data-theme="computer"]
-  .section-icon-center
-  svg[fill]:not([fill="none"])
-  polygon,
-[data-theme="computer"] .philosophy-icon svg[fill]:not([fill="none"]) path,
-[data-theme="computer"] .philosophy-icon svg[fill]:not([fill="none"]) circle,
-[data-theme="computer"] .philosophy-icon svg[fill]:not([fill="none"]) rect,
-[data-theme="computer"] .philosophy-icon svg[fill]:not([fill="none"]) polygon,
-[data-theme="computer"] .cta-icon svg[fill]:not([fill="none"]) path,
-[data-theme="computer"] .cta-icon svg[fill]:not([fill="none"]) circle,
-[data-theme="computer"] .cta-icon svg[fill]:not([fill="none"]) rect,
-[data-theme="computer"] .cta-icon svg[fill]:not([fill="none"]) polygon {
-  fill: var(--color-pure-white) !important;
-}
-
-[data-theme="computer"] .feature-icon svg circle[fill="currentColor"],
-[data-theme="computer"] .feature-icon svg path[fill="currentColor"],
-[data-theme="computer"] .feature-icon svg rect[fill="currentColor"],
-[data-theme="computer"] .feature-icon svg polygon[fill="currentColor"],
-[data-theme="computer"] .section-icon svg circle[fill="currentColor"],
-[data-theme="computer"] .section-icon svg path[fill="currentColor"],
-[data-theme="computer"] .section-icon svg rect[fill="currentColor"],
-[data-theme="computer"] .section-icon svg polygon[fill="currentColor"],
-[data-theme="computer"] .section-icon-center svg circle[fill="currentColor"],
-[data-theme="computer"] .section-icon-center svg path[fill="currentColor"],
-[data-theme="computer"] .section-icon-center svg rect[fill="currentColor"],
-[data-theme="computer"] .section-icon-center svg polygon[fill="currentColor"],
-[data-theme="computer"] .philosophy-icon svg circle[fill="currentColor"],
-[data-theme="computer"] .philosophy-icon svg path[fill="currentColor"],
-[data-theme="computer"] .philosophy-icon svg rect[fill="currentColor"],
-[data-theme="computer"] .philosophy-icon svg polygon[fill="currentColor"],
-[data-theme="computer"] .cta-icon svg circle[fill="currentColor"],
-[data-theme="computer"] .cta-icon svg path[fill="currentColor"],
-[data-theme="computer"] .cta-icon svg rect[fill="currentColor"],
-[data-theme="computer"] .cta-icon svg polygon[fill="currentColor"] {
-  fill: var(--color-pure-white) !important;
-}
-
-/* Computer Mode - Icon Contrast Fix */
-[data-theme="computer"] svg {
-  color: currentColor !important;
-}
-
-/* For stroke-based icons (most common), use stroke not fill */
-[data-theme="computer"] svg[fill="none"] circle,
-[data-theme="computer"] svg[fill="none"] path,
-[data-theme="computer"] svg[fill="none"] rect,
-[data-theme="computer"] svg[fill="none"] polygon,
-[data-theme="computer"] svg[fill="none"] polyline,
-[data-theme="computer"] svg[fill="none"] line {
-  fill: none !important;
-  stroke: currentColor !important;
-}
-
-/* For filled icons, use currentColor */
-[data-theme="computer"] svg:not([fill="none"]) circle:not([fill]),
-[data-theme="computer"] svg:not([fill="none"]) path:not([fill]),
-[data-theme="computer"] svg:not([fill="none"]) rect:not([fill]),
-[data-theme="computer"] svg:not([fill="none"]) polygon:not([fill]) {
-  stroke: currentColor !important;
-}
-
-/* Override any reduced opacity on SVG elements in computer mode for visibility */
-[data-theme="computer"] svg circle[opacity],
-[data-theme="computer"] svg path[opacity],
-[data-theme="computer"] svg rect[opacity],
-[data-theme="computer"] svg polygon[opacity],
-[data-theme="computer"] svg polyline[opacity],
-[data-theme="computer"] svg line[opacity] {
-  opacity: 1 !important;
-}
-
-/* Ensure proper color for filled SVG elements */
-[data-theme="computer"] svg circle[fill="currentColor"],
-[data-theme="computer"] svg path[fill="currentColor"],
-[data-theme="computer"] svg rect[fill="currentColor"],
-[data-theme="computer"] svg polygon[fill="currentColor"] {
-  fill: currentColor !important;
-  opacity: 1 !important;
-}
-
-/* ASCII Grid Background for Computer Mode */
-[data-theme="computer"] body::before {
+/* Warm parchment texture */
+body::after {
   content: "";
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  pointer-events: none;
-  z-index: -1;
-  background-image: repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 19px,
-      rgba(0, 240, 255, 0.08) 19px,
-      rgba(0, 240, 255, 0.08) 20px
+  background-image:
+    radial-gradient(circle at 18% 28%, rgba(217, 119, 87, 0.012) 0%, transparent 35%),
+    radial-gradient(circle at 82% 72%, rgba(217, 119, 87, 0.012) 0%, transparent 35%),
+    repeating-linear-gradient(
+      90deg, transparent, transparent 1px,
+      rgba(26, 21, 18, 0.003) 1px, rgba(26, 21, 18, 0.003) 2px
     ),
     repeating-linear-gradient(
-      90deg,
-      transparent,
-      transparent 9px,
-      rgba(0, 136, 255, 0.06) 9px,
-      rgba(0, 136, 255, 0.06) 10px
+      0deg, transparent, transparent 1px,
+      rgba(26, 21, 18, 0.002) 1px, rgba(26, 21, 18, 0.002) 2px
     );
-  animation: scanlines 8s linear infinite;
-}
-
-@keyframes scanlines {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(20px);
-  }
-}
-
-/* Terminal Cursor Effect */
-[data-theme="computer"] body::after {
-  content: "█";
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  color: rgba(0, 240, 255, 0.8);
-  font-family: "JetBrains Mono", monospace;
-  font-size: 16px;
-  animation: blink 1s step-end infinite;
   pointer-events: none;
-  z-index: 9999;
-  text-shadow: 0 0 8px rgba(0, 240, 255, 0.6), 0 0 15px rgba(0, 136, 255, 0.4);
+  z-index: -1;
+  mix-blend-mode: multiply;
+  opacity: 0.8;
 }
 
-@keyframes blink {
-  0%,
-  50% {
-    opacity: 1;
-  }
-  51%,
-  100% {
-    opacity: 0;
-  }
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(circle at 25% 25%, var(--accent-gas) 0%, transparent 45%),
+    radial-gradient(circle at 75% 75%, rgba(217, 119, 87, 0.02) 0%, transparent 50%),
+    radial-gradient(circle at 50% 5%, rgba(26, 21, 18, 0.01) 0%, transparent 40%);
+  pointer-events: none;
+  z-index: -1;
+  animation: gradientShift 35s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.7; }
+  33% { transform: scale(1.02) rotate(0.4deg); opacity: 0.9; }
+  66% { transform: scale(1.04) rotate(-0.4deg); opacity: 0.75; }
 }
 
 /* ============================================
-   TYPOGRAPHY SYSTEM
+   TYPOGRAPHY — Sonnet: Cormorant + DM Sans
    ============================================ */
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: var(--font-weight-bold);
-  line-height: 1.3;
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 600;
+  line-height: 1.15;
   color: var(--text-primary);
-  letter-spacing: -0.015em;
-  margin-bottom: var(--space-4);
-  font-feature-settings: "kern" 1, "liga" 1;
+  letter-spacing: -0.01em;
+  margin-bottom: var(--space-6);
 }
 
 h1 {
   font-size: clamp(var(--font-size-4xl), 6vw, var(--font-size-7xl));
-  font-weight: var(--font-weight-extrabold);
-  letter-spacing: -0.025em;
-  line-height: 1.1;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 0.95;
 }
 
 h2 {
   font-size: clamp(var(--font-size-3xl), 4vw, var(--font-size-5xl));
-  font-weight: var(--font-weight-bold);
-  letter-spacing: -0.02em;
-  line-height: 1.2;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.1;
 }
 
 h3 {
   font-size: var(--font-size-2xl);
-  font-weight: var(--font-weight-bold);
-  letter-spacing: -0.015em;
+  font-weight: 600;
+  letter-spacing: -0.01em;
 }
 
 h4 {
   font-size: var(--font-size-xl);
-  font-weight: var(--font-weight-semibold);
-  letter-spacing: -0.01em;
+  font-weight: 500;
 }
 
 p {
   color: var(--text-secondary);
-  line-height: 1.6;
+  line-height: 1.65;
   margin-bottom: var(--space-4);
   font-size: var(--font-size-base);
-  letter-spacing: -0.011em;
+  letter-spacing: -0.005em;
 }
 
 .text-large {
   font-size: var(--font-size-lg);
-  line-height: 1.5;
+  line-height: 1.55;
   color: var(--text-secondary);
   font-weight: var(--font-weight-medium);
 }
@@ -721,57 +320,75 @@ p {
   align-items: center;
   justify-content: center;
   gap: var(--space-2);
-  padding: var(--space-3) var(--space-5);
-  border-radius: var(--radius-md);
-  font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-medium);
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-lg);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  font-family: "DM Sans", sans-serif;
   text-decoration: none;
   cursor: pointer;
-  transition: all var(--transition-fast);
+  transition: all var(--transition-normal);
   border: 1px solid transparent;
   position: relative;
-  font-family: inherit;
   outline: none;
-  letter-spacing: -0.003em;
+  backdrop-filter: blur(var(--blur-sm));
+  -webkit-backdrop-filter: blur(var(--blur-sm));
+  overflow: hidden;
+  letter-spacing: -0.005em;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+  transition: left var(--transition-slow);
+}
+
+.btn:hover::before {
+  left: 100%;
 }
 
 .btn:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
-  box-shadow: var(--shadow-glow);
+  box-shadow: 0 0 0 4px var(--accent-glow);
 }
 
 .btn-primary {
   background: var(--accent);
-  color: var(--text-inverse);
+  color: #fff;
   border-color: var(--accent);
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-sm), inset 0 1px 0 rgba(255, 255, 255, 0.15);
 }
 
 .btn-primary:hover {
   background: var(--accent-hover);
-  border-color: var(--accent-hover);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md), var(--shadow-glow);
 }
 
 .btn-primary:active {
-  transform: scale(0.98);
-  box-shadow: var(--shadow-xs);
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
 }
 
 .btn-secondary {
-  background: var(--bg-elevated);
+  background: var(--bg-glass);
   color: var(--text-primary);
   border-color: var(--border-primary);
+  backdrop-filter: blur(var(--blur-md));
+  -webkit-backdrop-filter: blur(var(--blur-md));
 }
 
 .btn-secondary:hover {
-  background: var(--bg-secondary);
+  background: var(--bg-glass-strong);
   border-color: var(--border-strong);
-}
-
-.btn-secondary:active {
-  transform: scale(0.98);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
 }
 
 .btn-ghost {
@@ -781,7 +398,7 @@ p {
 }
 
 .btn-ghost:hover {
-  background: var(--bg-secondary);
+  background: var(--bg-glass);
   color: var(--text-primary);
 }
 
@@ -797,137 +414,52 @@ p {
   border-radius: var(--radius-xl);
 }
 
-/* Computer Mode - Terminal Buttons */
-[data-theme="computer"] .btn {
-  border-radius: 0;
-  border: 2px solid var(--border-primary);
-  background: var(--bg-elevated);
-  color: var(--text-primary);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-weight: 600;
-  position: relative;
-  overflow: visible;
-}
+/* ============================================
+   CARD SYSTEM
+   ============================================ */
 
-[data-theme="computer"] .btn svg {
-  color: currentColor;
-  stroke: currentColor;
-}
-
-[data-theme="computer"] .btn::before {
-  content: ">";
-  position: absolute;
-  left: -15px;
-  color: var(--text-primary);
-  opacity: 0;
-  transition: opacity 0.2s ease, left 0.2s ease;
-}
-
-[data-theme="computer"] .btn:hover::before {
-  opacity: 1;
-  left: -20px;
-}
-
-[data-theme="computer"] .btn-primary {
-  background: var(--text-primary);
-  color: var(--bg-primary);
-  border-color: var(--text-primary);
-}
-
-[data-theme="computer"] .btn-primary svg {
-  color: var(--bg-primary);
-  stroke: var(--bg-primary);
-}
-
-[data-theme="computer"] .btn-primary:hover {
-  box-shadow: 0 0 20px rgba(0, 240, 255, 0.6), 0 0 40px rgba(0, 136, 255, 0.3);
-  transform: scale(1.02);
-}
-
-[data-theme="computer"] .btn-secondary {
-  background: transparent;
-  border-color: var(--border-primary);
-  color: var(--text-primary);
-}
-
-[data-theme="computer"] .btn-secondary svg {
-  color: var(--text-primary);
-  stroke: var(--text-primary);
-}
-
-[data-theme="computer"] .btn-secondary:hover {
-  background: var(--bg-secondary);
-  border-color: var(--border-strong);
-  box-shadow: 0 0 20px rgba(0, 240, 255, 0.4), 0 0 30px rgba(0, 136, 255, 0.2);
-}
-
-/* Clean card system - Manifesto style */
 .card {
   background: var(--bg-elevated);
   border: 1px solid var(--border-primary);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-xl);
   padding: var(--space-6);
-  transition: all var(--transition-fast);
+  transition: all var(--transition-normal);
   position: relative;
-  box-shadow: var(--shadow-xs);
+  backdrop-filter: blur(var(--blur-md));
+  -webkit-backdrop-filter: blur(var(--blur-md));
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--accent-gas) 0%, transparent 40%);
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+  pointer-events: none;
+}
+
+.card:hover::before {
+  opacity: 1;
 }
 
 .card:hover {
   border-color: var(--border-strong);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg), 0 0 20px var(--accent-glow);
 }
 
 .card-glass {
-  background: var(--bg-elevated);
+  background: var(--bg-glass);
+  backdrop-filter: blur(var(--blur-lg));
+  -webkit-backdrop-filter: blur(var(--blur-lg));
   border: 1px solid var(--border-primary);
-  box-shadow: var(--shadow-sm);
-}
-
-/* Computer Mode - ASCII Box Cards */
-[data-theme="computer"] .card,
-[data-theme="computer"] .card-glass {
-  border-radius: 0;
-  border: 2px solid var(--border-primary);
-  box-shadow: none;
-  position: relative;
-  background: var(--bg-elevated);
-}
-
-[data-theme="computer"] .card::before {
-  content: "┌" attr(data-title) "─────────────────────────────────────┐";
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  height: 20px;
-  color: var(--text-primary);
-  font-size: 14px;
-  line-height: 1;
-  white-space: nowrap;
-  overflow: hidden;
-  pointer-events: none;
-}
-
-[data-theme="computer"] .card::after {
-  content: "└─────────────────────────────────────────┘";
-  position: absolute;
-  bottom: -2px;
-  left: -2px;
-  right: -2px;
-  height: 20px;
-  color: var(--text-primary);
-  font-size: 14px;
-  line-height: 1;
-  white-space: nowrap;
-  overflow: hidden;
-  pointer-events: none;
-}
-
-[data-theme="computer"] .card:hover {
-  border-color: var(--border-strong);
-  box-shadow: 0 0 30px rgba(0, 240, 255, 0.25), 0 0 50px rgba(0, 136, 255, 0.15);
-  transform: translateY(-2px);
+  box-shadow: var(--shadow-md), inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 /* ============================================
@@ -940,16 +472,12 @@ p {
   left: 0;
   right: 0;
   z-index: var(--z-header);
-  background: var(--bg-elevated);
+  background: var(--bg-blur);
+  backdrop-filter: blur(var(--blur-xl));
+  -webkit-backdrop-filter: blur(var(--blur-xl));
   border-bottom: 1px solid var(--border-primary);
   height: var(--header-height);
-  transition: all var(--transition-fast);
-}
-
-/* Computer Mode - Navigation Fix */
-[data-theme="computer"] .nav {
-  background: var(--bg-primary);
-  border-bottom: 2px solid var(--border-primary);
+  transition: all var(--transition-normal);
 }
 
 .nav-container {
@@ -966,8 +494,10 @@ p {
   display: flex;
   align-items: center;
   gap: var(--space-2);
-  font-weight: var(--font-weight-bold);
-  font-size: var(--font-size-lg);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: 0.01em;
   color: var(--text-primary);
   text-decoration: none;
   transition: all var(--transition-fast);
@@ -988,24 +518,29 @@ p {
 .nav-link {
   color: var(--text-secondary);
   text-decoration: none;
-  font-size: var(--font-size-base);
+  font-size: var(--font-size-sm);
   font-weight: var(--font-weight-medium);
   transition: all var(--transition-normal);
   padding: var(--space-2) var(--space-4);
   border-radius: var(--radius-lg);
   position: relative;
-  letter-spacing: -0.011em;
+  letter-spacing: 0.01em;
+  border: 1px solid transparent;
 }
 
 .nav-link:hover,
 .nav-link.active {
   color: var(--text-primary);
-  background: var(--bg-secondary);
+  background: var(--bg-glass);
+  backdrop-filter: blur(var(--blur-sm));
+  -webkit-backdrop-filter: blur(var(--blur-sm));
+  border-color: var(--border-primary);
+  box-shadow: var(--shadow-sm);
 }
 
 .nav-link.active {
-  color: var(--accent);
-  background: var(--accent-soft);
+  background: var(--bg-glass-strong);
+  border-color: var(--border-strong);
 }
 
 .nav-cta {
@@ -1033,14 +568,17 @@ p {
 }
 
 .glass {
-  background: var(--bg-elevated);
+  background: var(--bg-glass);
+  backdrop-filter: blur(var(--blur-md));
+  -webkit-backdrop-filter: blur(var(--blur-md));
   border: 1px solid var(--border-primary);
 }
 
 .glass-strong {
-  background: var(--bg-elevated);
+  background: var(--bg-glass-strong);
+  backdrop-filter: blur(var(--blur-lg));
+  -webkit-backdrop-filter: blur(var(--blur-lg));
   border: 1px solid var(--border-strong);
-  box-shadow: var(--shadow-sm);
 }
 
 .fade-in {
@@ -1059,130 +597,54 @@ p {
   transform: scale(0.95);
 }
 
-.grid {
-  display: grid;
-}
+.grid { display: grid; }
+.grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+.grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.grid-auto-fit { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
 
-.grid-cols-1 {
-  grid-template-columns: repeat(1, minmax(0, 1fr));
-}
+.gap-4 { gap: var(--space-4); }
+.gap-6 { gap: var(--space-6); }
+.gap-8 { gap: var(--space-8); }
 
-.grid-cols-2 {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.grid-cols-3 {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.grid-auto-fit {
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-}
-
-.gap-4 {
-  gap: var(--space-4);
-}
-
-.gap-6 {
-  gap: var(--space-6);
-}
-
-.gap-8 {
-  gap: var(--space-8);
-}
-
-.flex {
-  display: flex;
-}
-
-.flex-col {
-  flex-direction: column;
-}
-
-.items-center {
-  align-items: center;
-}
-
-.justify-center {
-  justify-content: center;
-}
-
-.justify-between {
-  justify-content: space-between;
-}
-
-.relative {
-  position: relative;
-}
-
-.absolute {
-  position: absolute;
-}
-
-.inset-0 {
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-
-.overflow-hidden {
-  overflow: hidden;
-}
-
-.pointer-events-none {
-  pointer-events: none;
-}
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.items-center { align-items: center; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.relative { position: relative; }
+.absolute { position: absolute; }
+.inset-0 { top: 0; right: 0; bottom: 0; left: 0; }
+.overflow-hidden { overflow: hidden; }
+.pointer-events-none { pointer-events: none; }
 
 /* ============================================
    ANIMATIONS
    ============================================ */
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 @keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes scaleIn {
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+  to { opacity: 1; transform: scale(1); }
 }
 
-/* Staggered animations */
-.fade-in-up:nth-child(1) {
-  animation-delay: 0ms;
-}
-.fade-in-up:nth-child(2) {
-  animation-delay: 100ms;
-}
-.fade-in-up:nth-child(3) {
-  animation-delay: 200ms;
-}
-.fade-in-up:nth-child(4) {
-  animation-delay: 300ms;
-}
-.fade-in-up:nth-child(5) {
-  animation-delay: 400ms;
-}
-.fade-in-up:nth-child(6) {
-  animation-delay: 500ms;
-}
+/* Staggered */
+.fade-in-up:nth-child(1) { animation-delay: 0ms; }
+.fade-in-up:nth-child(2) { animation-delay: 100ms; }
+.fade-in-up:nth-child(3) { animation-delay: 200ms; }
+.fade-in-up:nth-child(4) { animation-delay: 300ms; }
+.fade-in-up:nth-child(5) { animation-delay: 400ms; }
+.fade-in-up:nth-child(6) { animation-delay: 500ms; }
 
 /* ============================================
-   RESPONSIVE DESIGN
+   RESPONSIVE
    ============================================ */
 
 @media (max-width: 768px) {
@@ -1191,36 +653,21 @@ p {
     --space-24: 80px;
   }
 
-  .nav-links {
-    display: none;
-  }
+  .nav-links { display: none; }
 
   .grid-cols-2,
-  .grid-cols-3 {
-    grid-template-columns: 1fr;
-  }
-
+  .grid-cols-3,
   .grid-auto-fit {
     grid-template-columns: 1fr;
   }
 
-  h1 {
-    font-size: clamp(var(--font-size-3xl), 8vw, var(--font-size-5xl));
-  }
-
-  h2 {
-    font-size: clamp(var(--font-size-2xl), 6vw, var(--font-size-4xl));
-  }
+  h1 { font-size: clamp(var(--font-size-3xl), 8vw, var(--font-size-5xl)); }
+  h2 { font-size: clamp(var(--font-size-2xl), 6vw, var(--font-size-4xl)); }
 }
 
 @media (max-width: 480px) {
-  :root {
-    --container-padding: 12px;
-  }
-
-  .section-padding {
-    padding: var(--space-16) 0;
-  }
+  :root { --container-padding: 12px; }
+  .section-padding { padding: var(--space-16) 0; }
 }
 
 /* ============================================
@@ -1228,379 +675,139 @@ p {
    ============================================ */
 
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
+  *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
 
-  .fade-in-up,
-  .scale-in {
+  .fade-in-up, .scale-in {
     opacity: 1 !important;
     transform: none !important;
   }
+
+  body::before { animation: none !important; }
 }
 
-/* High contrast mode */
 @media (prefers-contrast: high) {
   :root {
     --border-primary: var(--border-strong);
+    --bg-glass: var(--bg-elevated);
   }
-
-  .card,
-  .btn,
-  .nav {
-    border-width: 2px;
-  }
+  .card, .btn { border-width: 2px; }
 }
 
 /* Selection */
 ::selection {
-  background: rgba(0, 136, 255, 0.2);
-  color: #001a33;
+  background: var(--accent-glow);
+  color: var(--color-ink);
 }
 
-/* Scrollbar - minimal Notion style */
-::-webkit-scrollbar {
-  width: 6px;
-}
-
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-secondary); }
 ::-webkit-scrollbar-thumb {
-  background: var(--border-strong);
-  border-radius: var(--radius-sm);
+  background: var(--color-stone-lighter);
+  border-radius: var(--radius-full);
 }
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--text-quaternary);
-}
+::-webkit-scrollbar-thumb:hover { background: var(--color-stone-light); }
 
 /* Theme toggle */
 .theme-toggle {
-  background: var(--bg-elevated);
+  background: var(--bg-glass);
   border: 1px solid var(--border-primary);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-lg);
   padding: var(--space-2);
   cursor: pointer;
   transition: all var(--transition-fast);
+  backdrop-filter: blur(var(--blur-sm));
+  -webkit-backdrop-filter: blur(var(--blur-sm));
 }
 
 .theme-toggle:hover {
-  background: var(--bg-secondary);
+  background: var(--bg-glass-strong);
   border-color: var(--border-strong);
+  transform: translateY(-1px);
 }
 
 .theme-toggle:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
-  box-shadow: var(--shadow-glow);
+  box-shadow: 0 0 0 4px var(--accent-glow);
 }
 
 /* ============================================
-   THEME-SPECIFIC ENHANCEMENTS
+   SONNET ACCENT ELEMENTS
    ============================================ */
 
-/* Simple section divider */
+/* Thin decorative rule — like a verse break */
 .section-divider {
   height: 1px;
-  background: var(--border-primary);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--accent-glow) 20%,
+    var(--accent) 50%,
+    var(--accent-glow) 80%,
+    transparent
+  );
   margin: var(--space-16) 0;
 }
 
-/* Computer Mode - ASCII Section Divider */
-[data-theme="computer"] .section-divider {
-  height: auto;
-  background: none;
-  text-align: center;
-  position: relative;
-  margin: var(--space-16) 0;
+/* Badge */
+.built-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1) var(--space-3);
+  background: var(--accent-soft);
+  border: 1px solid rgba(217, 119, 87, 0.25);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--accent-hover);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-family: "DM Sans", sans-serif;
 }
 
-[data-theme="computer"] .section-divider::before {
-  content: "─────────────────────────────────────────────────────────────";
-  color: var(--border-primary);
-  display: block;
-  font-size: 14px;
-  line-height: 1;
-  overflow: hidden;
-  white-space: nowrap;
+.built-badge:hover {
+  background: rgba(217, 119, 87, 0.12);
+  transform: translateY(-1px);
 }
 
-/* Computer Mode - Typing Animation for Headings */
-[data-theme="computer"] h1,
-[data-theme="computer"] h2 {
-  position: relative;
-  display: inline-block;
-}
-
-[data-theme="computer"] h1::after,
-[data-theme="computer"] h2::after {
-  content: "_";
-  display: inline-block;
-  animation: blink 0.7s step-end infinite;
-  margin-left: 4px;
-}
-
-/* Computer Mode - Glitch Effect on Hover */
-[data-theme="computer"] .card:hover,
-[data-theme="computer"] .btn:hover {
-  animation: glitch 0.3s ease-in-out;
-}
-
-@keyframes glitch {
-  0%,
-  100% {
-    transform: translate(0);
-  }
-  20% {
-    transform: translate(-2px, 2px);
-  }
-  40% {
-    transform: translate(-2px, -2px);
-  }
-  60% {
-    transform: translate(2px, 2px);
-  }
-  80% {
-    transform: translate(2px, -2px);
-  }
-}
-
-/* ASCII Art Decorations for Computer Mode */
-[data-theme="computer"] .nav::before {
-  content: "╔════════════════════════════════════════════════════════════════╗";
+/* Page decoration — subtle */
+.page-decoration {
   position: absolute;
-  bottom: -1px;
-  left: 0;
-  right: 0;
-  font-size: 12px;
-  line-height: 1;
-  color: var(--border-primary);
-  white-space: nowrap;
-  overflow: hidden;
-  pointer-events: none;
-}
-
-/* Matrix Rain Effect (subtle) */
-[data-theme="computer"] .matrix-bg {
-  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   pointer-events: none;
-  z-index: 0;
-  opacity: 0.08;
-  background-image: linear-gradient(transparent 50%, rgba(0, 255, 65, 0.03) 50%),
-    linear-gradient(90deg, transparent 50%, rgba(0, 255, 65, 0.03) 50%);
-  background-size: 2px 2px;
-  animation: matrix-scroll 20s linear infinite;
+  z-index: 1;
+  opacity: 0.2;
+  background-image:
+    linear-gradient(rgba(217, 119, 87, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(217, 119, 87, 0.04) 1px, transparent 1px);
+  background-size: 80px 80px;
 }
 
-@keyframes matrix-scroll {
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 0 100%;
-  }
+/* Data points */
+.data-point {
+  width: 4px;
+  height: 4px;
+  background: var(--accent);
+  border-radius: 50%;
+  animation: dataPointPulse 2.5s ease-in-out infinite;
 }
 
-/* Computer Mode - Terminal Prompt Style */
-[data-theme="computer"] .philosophy-icon,
-[data-theme="computer"] .author-avatar,
-[data-theme="computer"] .step-number {
-  border-radius: 0;
-  border: 2px solid var(--border-primary);
-  background: transparent !important;
-  color: var(--text-primary);
-  font-weight: 700;
+@keyframes dataPointPulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.3); }
+}
+
+/* Connected grid */
+.connected-grid {
   position: relative;
-  box-shadow: none !important;
-}
-
-[data-theme="computer"] .philosophy-icon svg,
-[data-theme="computer"] .author-avatar svg,
-[data-theme="computer"] .step-number svg {
-  color: var(--text-primary) !important;
-  stroke: var(--text-primary) !important;
-}
-
-[data-theme="computer"] .philosophy-icon svg circle,
-[data-theme="computer"] .philosophy-icon svg path,
-[data-theme="computer"] .author-avatar svg circle,
-[data-theme="computer"] .author-avatar svg path,
-[data-theme="computer"] .step-number svg circle,
-[data-theme="computer"] .step-number svg path {
-  fill: var(--text-primary) !important;
-  stroke: var(--text-primary) !important;
-}
-
-[data-theme="computer"] .philosophy-icon::before,
-[data-theme="computer"] .author-avatar::before,
-[data-theme="computer"] .step-number::before {
-  content: "$";
-  position: absolute;
-  top: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 10px;
-  color: var(--text-secondary);
-}
-
-/* Loading Bar Animation for Computer Mode */
-[data-theme="computer"] .loading-bar {
-  height: 2px;
-  background: var(--border-primary);
-  position: relative;
-  overflow: hidden;
-  margin: var(--space-4) 0;
-}
-
-[data-theme="computer"] .loading-bar::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 50%;
-  height: 100%;
-  background: var(--text-primary);
-  animation: loading 2s linear infinite;
-}
-
-@keyframes loading {
-  0% {
-    left: -100%;
-  }
-  100% {
-    left: 100%;
-  }
-}
-
-/* ASCII Corner Brackets for Computer Mode */
-[data-theme="computer"] .section-title::before,
-[data-theme="computer"] .cta-title::before {
-  content: "[ ";
-  color: var(--text-secondary);
-}
-
-[data-theme="computer"] .section-title::after,
-[data-theme="computer"] .cta-title::after {
-  content: " ]";
-  color: var(--text-secondary);
-}
-
-/* Computer Mode - Navigation Links */
-[data-theme="computer"] .nav-link {
-  border-radius: 0;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-size: var(--font-size-xs);
-  font-weight: 600;
-}
-
-[data-theme="computer"] .nav-link::before {
-  content: "> ";
-  opacity: 0;
-  transition: opacity 0.2s ease;
-}
-
-[data-theme="computer"] .nav-link:hover::before,
-[data-theme="computer"] .nav-link.active::before {
-  opacity: 1;
-}
-
-[data-theme="computer"] .nav-link:hover,
-[data-theme="computer"] .nav-link.active {
-  background: transparent;
-  border: 1px solid var(--border-primary);
-  box-shadow: none;
-}
-
-/* Computer Mode - Logo ASCII Style */
-[data-theme="computer"] .nav-logo {
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--text-primary);
-}
-
-[data-theme="computer"] .nav-logo svg {
-  color: var(--text-primary) !important;
-}
-
-[data-theme="computer"] .nav-logo svg circle {
-  fill: var(--text-primary) !important;
-  opacity: 1 !important;
-}
-
-/* Computer Mode - Scrollbar */
-[data-theme="computer"] ::-webkit-scrollbar {
-  width: 8px;
-}
-
-[data-theme="computer"] ::-webkit-scrollbar-thumb {
-  background: var(--border-strong);
-  border-radius: 0;
-}
-
-[data-theme="computer"] ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-cyber-blue);
-  box-shadow: 0 0 5px rgba(0, 136, 255, 0.5);
-}
-
-/* Startup Boot Sequence Animation (for fun) */
-@keyframes bootSequence {
-  0% {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-[data-theme="computer"] .fade-in-up {
-  animation: bootSequence 0.4s ease-out forwards;
-}
-
-/* Computer Mode - Input/Text Fields */
-[data-theme="computer"] input,
-[data-theme="computer"] textarea {
-  border-radius: 0;
-  border: 2px solid var(--border-primary);
-  background: var(--bg-elevated);
-  color: var(--text-primary);
-  font-family: "Inconsolata", monospace;
-}
-
-[data-theme="computer"] input:focus,
-[data-theme="computer"] textarea:focus {
-  outline: none;
-  border-color: var(--text-primary);
-  box-shadow: 0 0 0 2px var(--accent-glow);
-}
-
-/* Terminal-style Selection */
-[data-theme="computer"] ::selection {
-  background: rgba(0, 136, 255, 0.3);
-  color: var(--color-cyber-blue);
-  text-shadow: 0 0 5px rgba(0, 136, 255, 0.5);
-}
-
-/* Computer Mode - Remove animations in reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  [data-theme="computer"] body::before,
-  [data-theme="computer"] body::after,
-  [data-theme="computer"] h1::after,
-  [data-theme="computer"] h2::after {
-    animation: none !important;
-  }
 }
